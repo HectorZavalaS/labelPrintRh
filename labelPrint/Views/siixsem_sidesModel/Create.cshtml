@@ -1,0 +1,70 @@
+﻿@model labelPrint.Models.siixsem_sidesModel_td
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="window-title" style="margin-top:70px; width:40%;margin-left:auto;margin-right:auto;">Add Side</div>
+<div class="window-content" style="width:40%;background-image:none;background-color:transparent;margin-left:auto;margin-right:auto;padding:0px;">
+    <div class="well" style="background-color:gray;">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="window-content" style="background-image:none;">
+                    <div class="form-group" style="margin-left: auto;margin-right: auto;width: 90%;">
+                        <label for="se_id_model" class="control-label col-md-4">Modelo</label>
+                        <div class="col-md-8">
+                            @Html.DropDownList("se_id_model", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.se_id_model, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="window-content" style="background-image:none; margin-top:10px;">
+                    <div class="form-group" style="margin-left: auto;margin-right: auto;width: 90%;">
+                        <label for="se_id_model" class="control-label col-md-4">Lado</label>
+                        <div class="col-md-8">
+                            @Html.DropDownList("se_id_side", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.se_id_side, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: auto;margin-right: auto;width: 90%;">
+                        <label for="se_id_model" class="control-label col-md-4">Label tag</label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.se_cust_part_num, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.se_cust_part_num, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: auto;margin-right: auto;width: 90%;">
+                        <label for="se_id_model" class="control-label col-md-4">Oracle part number</label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.se_oracle_par_num, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.se_oracle_par_num, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+    <div>
+        <div class="form-group" style="float:right;margin-right:20px;">
+            <input type="button" value="Add Side" class="btn btn-success" id="btnSaveSide" />
+            <input type="button" value="Next" class="btn btn-success" id="btnNext" />
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        createSelect("#se_id_model");
+        createSelect("#se_id_side");
+        $("#btnSaveSide").click(function () {
+            insertSideModel();
+            return;
+        });
+    });
+</script>

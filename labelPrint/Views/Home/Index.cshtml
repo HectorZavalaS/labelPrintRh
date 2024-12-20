@@ -1,0 +1,51 @@
+﻿@{
+    string _lvl = "";
+    String _cd = "";
+    int _idU = 0;
+    if (Request.IsAuthenticated)
+    {
+        try
+        {
+            _lvl = Request.Cookies["_lvl"].Value;
+            _idU = Convert.ToInt32(Request.Cookies["_idU"].Value);
+            _cd = Request.Cookies["_idU"].Value;
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+}
+@if (Request.IsAuthenticated)
+{
+    if (_lvl == "4")
+    {
+        <div id="printSpec"></div>
+
+    @section scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                getSpecView();
+            });
+        </script>
+    }    
+    }
+}
+else
+{
+    <div class="alert alert-warning warningBar" role="alert" style="margin-top:90px;margin-left:auto;margin-right:auto;width:45%;">
+        Debes iniciar sesión para usar el sistema...
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnLogin" style="margin-left:30px;">
+            Iniciar sesion...
+        </button>
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //loadLoginDlg();
+                $("#btnLogin").click(function () {
+                    getDlgLogin();
+                });
+            });
+        </script>
+    }
+}

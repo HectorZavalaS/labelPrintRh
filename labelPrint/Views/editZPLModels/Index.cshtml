@@ -1,0 +1,73 @@
+﻿@model IEnumerable<labelPrint.Models.getZPLModels_Result>
+
+<div class="window" style="margin-top:70px;width:90%;">
+    <div class="window-title">CODIGOS ZPL / ZPL CODES</div>
+    <div class="window-content">
+        <div class="well" style="font-size:14px;font-family:pt_sansr;background-color:white;">
+            <table class="table" id="tblZPL">
+                <thead>
+                    <tr>
+                        <th>MODEL</th>
+                        <th>ID_ZPL</th>
+                        <th>ZPL DESCRIPTION</th>
+                        <th>ZPL CODE</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MODEL_NAME)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID_ZPL)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ZPL_DESCRIPTION)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ZPL_CODE)
+                            </td>
+                            <td>
+                                <center>
+                                    <a href="#" data-toggle="modal" data-target="#dlgGeneral" class="btn btn-xs btn-primary btnNEditProy" onclick="getDlgEditCZPL(@item.ID_ZPL,@item.TYPE_ZPL);">
+                                        <span class='glyphicon glyphicon-pencil' style='margin:0;'></span>
+                                    </a>
+                                </center>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @*<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnNewZPL" style="margin-left:30px;float:right;">
+            <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+        </button>*@
+        <div style="clear:both;"></div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblZPL').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+            //$("#btnNewZPL").click(function () {
+            //    getDlgCreateCZPL();
+            //});
+            $(".edit").html("<span class='glyphicon glyphicon-pencil' style='margin:0;'></span>");
+        });
+    </script>
+}

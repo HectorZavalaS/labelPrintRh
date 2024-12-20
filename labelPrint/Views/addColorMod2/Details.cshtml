@@ -1,0 +1,42 @@
+﻿@model labelPrint.Models.siixsem_colorsb_led2_td
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_colorsb_led2_td</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_colorb_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_colorb_t.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_lblTagColor_t.se_lblTag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_lblTagColor_t.se_lblTag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_models_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_models_t.se_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

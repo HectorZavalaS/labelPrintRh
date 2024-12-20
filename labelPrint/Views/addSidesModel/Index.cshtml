@@ -1,0 +1,98 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_sidesModel_td>
+
+@{
+    ViewBag.Title = "Index";
+}
+<script type="text/javascript">
+    blockV2("Cargando modelos...");
+</script>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="window" style="margin-top:70px;width:100%;">
+    <div class="window-title">ETIQUETAS / LABELS</div>
+    <div class="window-content">
+        <div class="well" style="font-size:14px;font-family:pt_sansr;background-color:white;">
+            <table class="table cell-border" id="tblSides" style="width:70%;margin-left:auto;margin-right:auto;">
+                <thead>
+                    <tr>
+                        <th>
+                            MODELO
+                        </th>
+                        <th>
+                            LADO
+                        </th>
+                        <th>
+                            LABEL TAG
+                        </th>
+                        <th>
+                            PART NUMBER
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.siixsem_models_t.se_description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.siixsem_sides_t.se_description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.se_cust_part_num)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.se_oracle_par_num)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.se_id_detail }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.se_id_detail }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.se_id_detail })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnNewAsignRev" style="margin-left:30px;float:right;">
+            <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+        </button>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblSides').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+            removeOverlay();
+            //$("#tblSides").show("explode");
+            $("#btnNewAsignRev").click(function () {
+                getDlgCreateAsignRev();
+                //location.reload(true);
+            });
+            $(".edit").html("<span class='glyphicon glyphicon-pencil' style='margin:0;'></span>");
+            $(".delete").html("<span class='glyphicon glyphicon-trash' style='margin:0;'></span>");
+            $(".det").html("<span class='glyphicon glyphicon-list-alt' style='margin:0;'></span>");
+        });
+    </script>
+}

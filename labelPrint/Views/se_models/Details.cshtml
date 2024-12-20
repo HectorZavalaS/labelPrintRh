@@ -1,0 +1,37 @@
+﻿@model labelPrint.Models.siixsem_models_t
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Descripción</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            Etiqueta especial:
+        </dt>
+
+        <dd>
+            @if(Model.se_is_special == 0) {
+                <div>NO</div>
+            }
+            else
+            {
+                <div>SI</div>
+            }
+
+        </dd>
+
+        <dt>Proyecto</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_families_t.se_description)
+        </dd>
+
+    </dl>
+</div>
+<div style="float:right;">
+    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cerrar</button>
+</div>
+<div style="clear:both;"></div>

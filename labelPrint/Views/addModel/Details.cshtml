@@ -1,0 +1,122 @@
+﻿@model labelPrint.Models.siixsem_models_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_models_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_is_special)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_is_special)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_valid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_valid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_serial_continuos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_serial_continuos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_two_led)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_two_led)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_dfc_ifc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_dfc_ifc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_four_sides)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_four_sides)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_cover_frame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_cover_frame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_num_pcb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_num_pcb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_laser_mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_laser_mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_has_panelLbl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_has_panelLbl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_is_ldm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_is_ldm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_families_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_families_t.se_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_model }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

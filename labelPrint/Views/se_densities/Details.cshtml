@@ -1,0 +1,26 @@
+﻿@model labelPrint.Models.siixsem_densities_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_densities_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_density)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_density)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_density }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

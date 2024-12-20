@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1eb0479c73d141babcec376a7db1da2b" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixseem_event_log" Width="2.125" PointX="6.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixseem_events_t" Width="1.5" PointX="4.625" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_datamatrix_t" Width="1.875" PointX="9.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_densities_t" Width="1.875" PointX="7.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_DjHist_t" Width="2" PointX="1.125" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_djs_t" Width="1.5" PointX="12.125" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_failInsOr_t" Width="1.5" PointX="9.125" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_forBackFlush_t" Width="1.5" PointX="11.125" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_labelSerials_td" Width="1.5" PointX="1.125" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_labelSerialsLed2_td" Width="1.5" PointX="13.125" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblFolios_td" Width="1.5" PointX="6.875" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblModel_spec_Led2_td" Width="2.375" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblModel_spec_td" Width="2.125" PointX="4" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblModel_spec_td_test" Width="1.5" PointX="15.125" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblModels_td" Width="2" PointX="15" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblSizes_t" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblTemplates_t" Width="1.875" PointX="12.375" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_lblZPL_t" Width="1.5" PointX="10.125" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_pcb_count_m_td" Width="2.125" PointX="6.875" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_pcb_count_sm_td" Width="2" PointX="3.875" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_pcbSerials_Led2_td" Width="1.5" PointX="3.875" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_pcbSerials_td" Width="1.5" PointX="3.875" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_reviews_t" Width="1.5" PointX="10.125" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_revModel_td" Width="1.5" PointX="12.375" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="siixsem_sys_lblPrint_dbModel.siixsem_ledSimos_t" Width="1.5" PointX="6.125" PointY="17.875" IsExpanded="true" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixseem_event_log_siixseem_events_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixseem_event_log_siixsem_lblModel_spec_td" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_datamatrix_t_siixsem_densities_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_datamatrix_t_siixsem_lblSizes_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_Labels_t_siixsem_datamatrix_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcb_count_m_td_siixsem_DjHist_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcb_count_sm_td_siixsem_DjHist_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_lblFolios_td_siixsem_lblModel_spec_td" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcb_count_sm_td_siixsem_lblModel_spec_Led2_td" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcb_count_m_td_siixsem_lblModel_spec_td" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_lblModels_td_siixsem_lblTemplates_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_lblTemplates_t_siixsem_lblZPL_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_revModel_td_siixsem_reviews_t" ManuallyRouted="false" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcbSerials_td_siixsem_DjHist_t" />
+        <AssociationConnector Association="siixsem_sys_lblPrint_dbModel.FK_siixsem_pcbSerials_Led2_td_siixsem_DjHist_t" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

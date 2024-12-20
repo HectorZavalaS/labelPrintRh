@@ -1,0 +1,42 @@
+﻿@model labelPrint.Models.siixsem_sides_t
+
+
+@using (Html.BeginForm("Edit", "se_sides", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formEditSides" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.se_id_side)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.se_description,"Descripción" ,htmlAttributes: new { @class = "control-label col-md-4" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.se_description, new { htmlAttributes = new { @class = "form-control validate[required]" } })
+            @Html.ValidationMessageFor(model => model.se_description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="float:right;">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cancelar</button>
+            <button type="submit" class="btn btn-sm btn-success" id="btnSaveSide">
+                <span class='glyphicon glyphicon-floppy-disk' style='margin-right:5px;'></span>Guardar
+            </button>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+}
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#formEditSides").validationEngine('attach');
+            $("#btnSaveSide").click(function () {
+                if (!jQuery("#formEditSides").validationEngine('validate')) {
+                    return false;
+                }
+                //getViewPrintLbl($("#txtLblCodeL").val(), $("#txtLblCodeR").val(), $("#selCant").val());
+            });
+        });
+</script>

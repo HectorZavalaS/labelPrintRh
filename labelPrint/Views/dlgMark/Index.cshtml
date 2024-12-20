@@ -1,0 +1,53 @@
+﻿<div id="infoMark">
+    <div class="card-border mb-3 card card-body border-warning">
+        <form class="form-inline" role="form">
+            <div class="widget-content" style="display: inline-flex; width:100%;">
+                <div class="demo-container">
+                    <div id="lblProgress">Listo para marcar <label id="numPcbs" style="display: contents;"></label> pcb's con la siguiente configuración:</div>
+                    <div style="font-weight:bold;font-size:18px;color:black;">Modelo: <label id="txtModel" style="display: contents;"></label></div><br />
+                    <div class="row" style="display: ruby;">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size:12px; font-weight:bold;">FLUX</label>
+                            <div class="col-sm-9">
+                                <label class="col-sm-2" id="txtFlxL" style="color:red;font-size:12px; font-weight:bold;text-align:center;"></label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size:12px; font-weight:bold;">COLOR</label>
+                            <div class="col-sm-9">
+                                <label class="col-sm-2" id="txtCBL" style="color:red;font-size:12px; font-weight:bold;text-align:center;"></label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size:12px; font-weight:bold;">VOLTAGE</label>
+                            <div class="col-sm-9">
+                                <label class="col-sm-2" id="txtVBL" style="color:red;font-size:12px; font-weight:bold;text-align:center;"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="progressMark">
+    <div class="card-border mb-3 card card-body border-warning">
+        <form class="form" role="form">
+            <div class="widget-content" style="display: inline-flex; width:100%;">
+                <div class="demo-container">
+                    <div id="lblProgress" style="margin-left:0px;margin-right:0px;">Marcando PCB´s<label id="countPcbs"></label> <label id="totPCBs"></label></div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-value"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="messagesSection">
+    <div class="demo-container" id="message">
+
+    </div>
+</div>

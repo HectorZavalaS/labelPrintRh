@@ -1,0 +1,125 @@
+﻿@{
+    int _idU = 0;
+    if (Request.IsAuthenticated)
+    {
+        try
+        {
+            _idU = Convert.ToInt32(Request.Cookies["_idU"].Value);
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+}
+
+<input type="hidden" value="@_idU" id="idUser"/>
+<div class="window-content" style="background: rgba(24, 8, 33, 0.2) none repeat;height:400px;overflow:auto;">
+    @*<div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="../images/busy.gif" style="width: 20px;margin:10px;" />Generando codigos...</div>*@
+    <div class="row" id="mainView">
+        <div class="column" style="width:59.33%;">
+            <table class="table" id="tblEtiquetas">
+                <thead>
+                    <tr>
+                        <th>LH</th>
+                        <th>RH</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column" style="width:40.33%;">
+            <div id="lblBoxContainer">
+                <div id="topPrev">
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center>.....</center>
+                <div id="botPrev">
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:0px;">
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                        <div class="columnprev">
+                            <div class="lblBox10x10">
+                                <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+    </div>
+    @*<div class="row" id="printing">
+        <img src="~/images/printer.gif" style="width: 100%;" />
+    </div>*@
+    <div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>
+

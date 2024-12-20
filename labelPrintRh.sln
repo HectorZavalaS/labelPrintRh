@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31910.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labelPrint", "labelPrint\labelPrint.csproj", "{03931D72-CED7-40D3-A976-1959B89F8CB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "file_monitor", "file_monitor\file_monitor.csproj", "{DA50BC06-9307-4B94-AA4B-0630FD195491}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03931D72-CED7-40D3-A976-1959B89F8CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03931D72-CED7-40D3-A976-1959B89F8CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03931D72-CED7-40D3-A976-1959B89F8CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03931D72-CED7-40D3-A976-1959B89F8CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA50BC06-9307-4B94-AA4B-0630FD195491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA50BC06-9307-4B94-AA4B-0630FD195491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA50BC06-9307-4B94-AA4B-0630FD195491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA50BC06-9307-4B94-AA4B-0630FD195491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A237CC97-D9ED-4AD7-A19E-8A6C3F099D8C}
+	EndGlobalSection
+EndGlobal

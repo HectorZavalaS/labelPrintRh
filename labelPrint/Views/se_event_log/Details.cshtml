@@ -1,0 +1,58 @@
+﻿@model labelPrint.Models.siixseem_event_log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixseem_event_log</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_id_user)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_id_user)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_date_event)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_date_event)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixseem_events_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixseem_events_t.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_lblModel_spec_td.se_id_spec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_lblModel_spec_td.se_id_spec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_log }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

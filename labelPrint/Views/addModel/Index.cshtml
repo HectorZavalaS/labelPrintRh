@@ -1,0 +1,105 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_models_t>
+
+@{
+    ViewBag.Title = "MODELOS -";
+}
+
+
+<div id="configModel">
+    <div class="window" style="margin-top:70px;width:100%;">
+        <div class="window-title">Modelos / Models</div>
+        <div class="window-content">
+            <div class="well" style="font-size:12px;font-family:pt_sansr;background-color:white;">
+                <table class="table" id="tblModels">
+                    <thead>
+                        <tr>
+                            <th>DESCRIPCION</th>
+                            <th>ESPECIAL</th>
+                            <th>ACTIVO</th>
+                            <th>SERIAL CONT</th>
+                            <th>DOS LEDS</th>
+                            <th>DFC/IFC</th>
+                            <th>PCB'S x PANEL</th>
+                            <th>LASER MARK</th>
+                            <th>PANEL</th>
+                            <th>LDM</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_is_special)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_valid)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_serial_continuos)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_two_led)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_dfc_ifc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_num_pcb)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_laser_mark)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_has_panelLbl)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.se_is_ldm)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.se_id_model }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.se_id_model }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.se_id_model })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-success" id="btnAddNewModel" style="margin-left:30px;float:right;">
+                <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+            </button>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblModels').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+        });
+        $("#btnAddNewModel").click(function () {
+            $("#configModel").hide("explode");
+            getAddModel();
+        });
+
+    </script>
+}

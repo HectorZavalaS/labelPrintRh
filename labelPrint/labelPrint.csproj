@@ -1,0 +1,2081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03931D72-CED7-40D3-A976-1959B89F8CB7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>labelPrint</RootNamespace>
+    <AssemblyName>labelPrint</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BoresSoft.Ftp">
+      <HintPath>.\BoresSoft.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=AMD64">
+      <HintPath>..\packages\IBM.Data.DB.Provider.11.1.4040.4\lib\net451\x64\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.7\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.9.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Class\base64.cs" />
+    <Compile Include="Class\CCogiscanCGS.cs" />
+    <Compile Include="Class\CFolios.cs" />
+    <Compile Include="Class\CLblWEBService.cs" />
+    <Compile Include="Class\CModelInfo.cs" />
+    <Compile Include="Class\CModelPrint.cs" />
+    <Compile Include="Class\ConnectToSharedFolder.cs" />
+    <Compile Include="Class\COracle.cs" />
+    <Compile Include="Class\CPrintController.cs" />
+    <Compile Include="Class\CPrintZPL.cs" />
+    <Compile Include="Class\CPrintZPLV2.cs" />
+    <Compile Include="Class\CPrintZPL_Led2.cs" />
+    <Compile Include="Class\CPrintZPL_Led2V2.cs" />
+    <Compile Include="Class\COpXML.cs" />
+    <Compile Include="Class\excel.cs" />
+    <Compile Include="Class\ftp.cs" />
+    <Compile Include="Class\printer.cs" />
+    <Compile Include="Class\RawPrinterHelper.cs" />
+    <Compile Include="Class\Shared.cs" />
+    <Compile Include="Class\Utils.cs" />
+    <Compile Include="Class\ZPL.cs" />
+    <Compile Include="Connected Services\wsCogiscan\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\addColorMod2Controller.cs" />
+    <Compile Include="Controllers\addColorModelController.cs" />
+    <Compile Include="Controllers\addFluxController.cs" />
+    <Compile Include="Controllers\addFluxModel2Controller.cs" />
+    <Compile Include="Controllers\addFluxModelController.cs" />
+    <Compile Include="Controllers\addModelController.cs" />
+    <Compile Include="Controllers\addSidesModelController.cs" />
+    <Compile Include="Controllers\addVoltModel2Controller.cs" />
+    <Compile Include="Controllers\addVoltModelController.cs" />
+    <Compile Include="Controllers\checkDJController.cs" />
+    <Compile Include="Controllers\checkPartLSM.ashx.cs">
+      <DependentUpon>checkPartLSM.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\checkPartM.ashx.cs">
+      <DependentUpon>checkPartM.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\checkPartSM.ashx.cs">
+      <DependentUpon>checkPartSM.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbAllModels.ashx.cs">
+      <DependentUpon>cmbAllModels.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbLabels.ashx.cs">
+      <DependentUpon>cmbLabels.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbLaserDjs.ashx.cs">
+      <DependentUpon>cmbLaserDjs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbModelsToPrint.ashx.cs">
+      <DependentUpon>cmbModelsToPrint.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbPrintedDJs.ashx.cs">
+      <DependentUpon>cmbPrintedDJs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\cmbSpecials.ashx.cs">
+      <DependentUpon>cmbSpecials.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\configController.cs" />
+    <Compile Include="Controllers\djAlreadyPrintController.cs" />
+    <Compile Include="Controllers\dlgMarkController.cs" />
+    <Compile Include="Controllers\dlgPrintLblController.cs" />
+    <Compile Include="Controllers\editZPLController.cs" />
+    <Compile Include="Controllers\editZPLModelsController.cs" />
+    <Compile Include="Controllers\fluxesController.cs" />
+    <Compile Include="Controllers\flxsModelController.cs" />
+    <Compile Include="Controllers\ftp_upload.ashx.cs">
+      <DependentUpon>ftp_upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\generateExcelSimos.ashx.cs">
+      <DependentUpon>generateExcelSimos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\genLblTemplate.ashx.cs">
+      <DependentUpon>genLblTemplate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\genLblTemplateTwoLed.ashx.cs">
+      <DependentUpon>genLblTemplateTwoLed.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\genRegLbls.ashx.cs">
+      <DependentUpon>genRegLbls.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getBinesFromBatch.ashx.cs">
+      <DependentUpon>getBinesFromBatch.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getCants.ashx.cs">
+      <DependentUpon>getCants.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getColorModelB.ashx.cs">
+      <DependentUpon>getColorModelB.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getColorsByIdModel.ashx.cs">
+      <DependentUpon>getColorsByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getColorsLed2ByIdModel.ashx.cs">
+      <DependentUpon>getColorsLed2ByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getDjQty.ashx.cs">
+      <DependentUpon>getDjQty.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getDjQtyPart.ashx.cs">
+      <DependentUpon>getDjQtyPart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getFluxesByIdModel.ashx.cs">
+      <DependentUpon>getFluxesByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getFluxesLed2ByIdModel.ashx.cs">
+      <DependentUpon>getFluxesLed2ByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getIdsDJSpecByNoDJ.ashx.cs">
+      <DependentUpon>getIdsDJSpecByNoDJ.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getLabelInfo.ashx.cs">
+      <DependentUpon>getLabelInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getLabelSize.ashx.cs">
+      <DependentUpon>getLabelSize.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getLaserMarks.ashx.cs">
+      <DependentUpon>getLaserMarks.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getLDMSpec.ashx.cs">
+      <DependentUpon>getLDMSpec.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getModelDescription.ashx.cs">
+      <DependentUpon>getModelDescription.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getModelPanelSpec.ashx.cs">
+      <DependentUpon>getModelPanelSpec.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getModelSpecF.ashx.cs">
+      <DependentUpon>getModelSpecF.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getNumSidesByIdModel.ashx.cs">
+      <DependentUpon>getNumSidesByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getPickedBins.ashx.cs">
+      <DependentUpon>getPickedBins.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getPreviewLabels.ashx.cs">
+      <DependentUpon>getPreviewLabels.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getPreviewLabelsLed2.ashx.cs">
+      <DependentUpon>getPreviewLabelsLed2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getRevByIdModel.ashx.cs">
+      <DependentUpon>getRevByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getReviews.ashx.cs">
+      <DependentUpon>getReviews.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getSidesByIdModel.ashx.cs">
+      <DependentUpon>getSidesByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getStep.ashx.cs">
+      <DependentUpon>getStep.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getVoltsByIdModel.ashx.cs">
+      <DependentUpon>getVoltsByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getVoltsLed2ByIdModel.ashx.cs">
+      <DependentUpon>getVoltsLed2ByIdModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\getZebraPrinters.ashx.cs">
+      <DependentUpon>getZebraPrinters.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\hasBeenPrinted.ashx.cs">
+      <DependentUpon>hasBeenPrinted.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\hasFourLbls.ashx.cs">
+      <DependentUpon>hasFourLbls.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\hasFourSides.ashx.cs">
+      <DependentUpon>hasFourSides.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\hasLDM.ashx.cs">
+      <DependentUpon>hasLDM.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\hasPanel.ashx.cs">
+      <DependentUpon>hasPanel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\importPartNumber.ashx.cs">
+      <DependentUpon>importPartNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\infoModelController.cs" />
+    <Compile Include="Controllers\insertAsignLabel.ashx.cs">
+      <DependentUpon>insertAsignLabel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertAsignReview.ashx.cs">
+      <DependentUpon>insertAsignReview.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertFluxModel.ashx.cs">
+      <DependentUpon>insertFluxModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertModel.ashx.cs">
+      <DependentUpon>insertModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertPartial.ashx.cs">
+      <DependentUpon>insertPartial.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertPartialSM.ashx.cs">
+      <DependentUpon>insertPartialSM.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertSerial.ashx.cs">
+      <DependentUpon>insertSerial.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertSideModel.ashx.cs">
+      <DependentUpon>insertSideModel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\insertSpecToPrint.ashx.cs">
+      <DependentUpon>insertSpecToPrint.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\isPrinted.ashx.cs">
+      <DependentUpon>isPrinted.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\laserMarkController.cs" />
+    <Compile Include="Controllers\lblWEBService.ashx.cs">
+      <DependentUpon>lblWEBService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\lblWEBServiceLed2.ashx.cs">
+      <DependentUpon>lblWEBServiceLed2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ldmModelsController.cs" />
+    <Compile Include="Controllers\login.ashx.cs">
+      <DependentUpon>login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\modelEngSpecController.cs" />
+    <Compile Include="Controllers\modelSpecController.cs" />
+    <Compile Include="Controllers\printLabel.ashx.cs">
+      <DependentUpon>printLabel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLabelLed2.ashx.cs">
+      <DependentUpon>printLabelLed2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLabelLed2V2.ashx.cs">
+      <DependentUpon>printLabelLed2V2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLabelSide.ashx.cs">
+      <DependentUpon>printLabelSide.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLabelSideLed2.ashx.cs">
+      <DependentUpon>printLabelSideLed2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLabelV2.ashx.cs">
+      <DependentUpon>printLabelV2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\printLaserSerial.ashx.cs">
+      <DependentUpon>printLaserSerial.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\raybenController.cs" />
+    <Compile Include="Controllers\remainingController.cs" />
+    <Compile Include="Controllers\setMonitor.ashx.cs">
+      <DependentUpon>setMonitor.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\se_asignLabelsController.cs" />
+    <Compile Include="Controllers\se_datamatrixController.cs" />
+    <Compile Include="Controllers\se_densitiesController.cs" />
+    <Compile Include="Controllers\se_eventsController.cs" />
+    <Compile Include="Controllers\se_event_logController.cs" />
+    <Compile Include="Controllers\se_flxbController.cs" />
+    <Compile Include="Controllers\se_flxModelController.cs" />
+    <Compile Include="Controllers\se_labelsController.cs" />
+    <Compile Include="Controllers\se_lblSizesController.cs" />
+    <Compile Include="Controllers\se_modelsController.cs" />
+    <Compile Include="Controllers\se_projectsController.cs" />
+    <Compile Include="Controllers\se_reviewsController.cs" />
+    <Compile Include="Controllers\se_revModelController.cs" />
+    <Compile Include="Controllers\se_rolesController.cs" />
+    <Compile Include="Controllers\se_sidesController.cs" />
+    <Compile Include="Controllers\se_sidesModelController.cs" />
+    <Compile Include="Controllers\se_usersController.cs" />
+    <Compile Include="Controllers\se_voltagebController.cs" />
+    <Compile Include="Controllers\se_voltModelController.cs" />
+    <Compile Include="Controllers\se_zplController.cs" />
+    <Compile Include="Controllers\siixsem_sidesModelController.cs" />
+    <Compile Include="Controllers\specialsController.cs" />
+    <Compile Include="Controllers\UpdateDjQty.ashx.cs">
+      <DependentUpon>UpdateDjQty.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\updateLblPositionHor.ashx.cs">
+      <DependentUpon>updateLblPositionHor.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\updateLblPositionVer.ashx.cs">
+      <DependentUpon>updateLblPositionVer.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\updateZPLOS.ashx.cs">
+      <DependentUpon>updateZPLOS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\updateZPLTS.ashx.cs">
+      <DependentUpon>updateZPLTS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\validateUsrPrint.ashx.cs">
+      <DependentUpon>validateUsrPrint.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\voltagesController.cs" />
+    <Compile Include="Controllers\zplModelsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\calculateCostAcumComp_Result.cs">
+      <DependentUpon>siixsem_scrap_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\calculateCostAcum_Result.cs">
+      <DependentUpon>siixsem_scrap_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkDateDJLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkDateDJV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkDateDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkPartLSM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkPartM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\checkPartSM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\existSerial_Led2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\existSerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateExcelSimos_Led2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateExcelSimos_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateLaserSerials_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateOldExcelSimos_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialsByDJV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialsByDJV3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialsByDJ_LED_2V3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialsByDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialSpecLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateSerialSpec_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generateWabcoSerials_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generate_lblCode_template2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generate_lblCode_templateLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generate_lblCode_template_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\generate_lblCtemplate_Rayben_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getAllModels_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getBinesByBatch_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getBinesDJFromOracleV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getBinesDJFromOracle_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getBinesDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getColorDescById_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getColorsByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getColorsLed2ByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDjNoMANUByDJGroup_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDJNumByGrp_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDjQtyPart_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDjQty_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getFluxDescByID_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getFluxesByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getFluxesLed2ByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getFluxLabelByID_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getGeneratedLaserSerials_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getGeneratedSerialsByDJV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getGeneratedSerialsByDJ_LED2_V2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getGeneratedSerialsByDJ_LED2_V3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getGeneratedSerialsByDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getIdsDJSpecByNoDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getInfoPrintLabelbyDJV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getInfoPrintLabelbyDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getInfoSerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelByModel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelsToPrintV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelsToPrintV3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabelsToPrint_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLabels_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLaserDjs_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLaserMarks_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLaserMark_Result.cs">
+      <DependentUpon>siixsem_laser_mark_cfg.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLaserPrg_Result.cs">
+      <DependentUpon>siixsem_laser_mark_cfg.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialBDJLaserM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialBDJLed2V2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialBDJLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialBDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialByDateLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialByDateV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialByDate_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialLaserMark_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialLed2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialLed2_V2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerialV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLastSerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLDMSpec_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialByDjV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialByDjV3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialByDj_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialLaserM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialLed2ByDjV3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getMaxSerialLed2ByDj_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelByDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelByID_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelColorB_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelColorP_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelColor_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelPanelSpec_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelPanel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelSpecF_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModelsReview_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getModFailures_Result.cs">
+      <DependentUpon>siixsem_scrap_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getNameCogiscan_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getNumSidesByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrintedDJs_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrinterById_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrinters_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrintFolioDJ_Led2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrintFolioDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getPrintrById_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getReviewByIdModel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getReviews_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSidebySerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSidesByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSpecialLabelsToPrint_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getStatus_Result.cs">
+      <DependentUpon>siixsem_laser_mark_cfg.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getStep_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getTemplateLblPrint_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getVoltDescById_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getVoltsByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getVoltsLed2ByIdModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getXMLByModel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getXMLPanel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getZPLModels_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hasCoverFrame_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hasFourLbls_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hasFourSides_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hasLDM_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hasPanel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\insertAsignModel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertAsignRevModel_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertEventLog_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertFluxModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertPCBcountSM_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertPCBcount_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSerialV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSerial_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSideModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSpec3V2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSpec3_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSpecLed2_2V2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSpecLed2_2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\insertSpec_test_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isDFCIFC_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isPrintedDJV2_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isPrintedDJ_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isPrinted_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isPrinting_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isSerialContinuos_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\isWabcoModel_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\siixseem_events_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixseem_event_log.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_colorb_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_colorsb_led2_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_colorsb_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_datamatrix_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_densities_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_DjHist_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_djs_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_failInsOr_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_families_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_flxb_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_flxsModel_led2_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_flxsModel_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_forBackFlush_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_labelSerialsLed2_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_labelSerials_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_laser_mark_cfg.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_laser_mark_cfg.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_laser_mark_cfg.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_laser_mark_cfg.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_laser_mark_cfg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_laser_mark_cfg.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblFolios_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblModels_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblModel_spec_Led2_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblModel_spec_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblModel_spec_td_test.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblSizes_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblTagColor_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblTemplates_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_lblZPL_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_ldmModels_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_ledSimos_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_dbEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_dbEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_dbEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_main_dbEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_main_dbEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_models_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_modFourLbls_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_pcbSerials_Led2_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_pcbSerials_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_pcb_count_m_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_pcb_count_sm_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_printers_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_reviews_t.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_revModel_td.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_scrap_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_scrap_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_scrap_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_scrap_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_scrap_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_scrap_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sidesModel_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sides_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_sys_lblPrint_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_users_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_user_role_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_voltageb_t.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_VoltsModel_led2_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\siixsem_VoltsModel_td.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updateLblPositionHor_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updateLblPositionVert_Result.cs">
+      <DependentUpon>siixsem_sys_lblPrint_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\updatePartNumber_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\validate_user_Result.cs">
+      <DependentUpon>siixsem_main_dbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Views\authDialogController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\wsCogiscan\configuration91.svcinfo" />
+    <None Include="Connected Services\wsCogiscan\configuration.svcinfo" />
+    <None Include="Connected Services\wsCogiscan\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\assets\fonts\fa-solid-900.svg" />
+    <Content Include="Content\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\assets\images\avatars\1.jpg" />
+    <Content Include="Content\assets\images\avatars\10.jpg" />
+    <Content Include="Content\assets\images\avatars\11.jpg" />
+    <Content Include="Content\assets\images\avatars\12.jpg" />
+    <Content Include="Content\assets\images\avatars\2.jpg" />
+    <Content Include="Content\assets\images\avatars\3.jpg" />
+    <Content Include="Content\assets\images\avatars\4.jpg" />
+    <Content Include="Content\assets\images\avatars\5.jpg" />
+    <Content Include="Content\assets\images\avatars\8.jpg" />
+    <Content Include="Content\assets\images\avatars\9.jpg" />
+    <Content Include="Content\assets\images\logo-inverse_.png" />
+    <Content Include="Content\assets\images\logo-inverse.png" />
+    <Content Include="Content\assets\images\logo_.png" />
+    <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\scripts\main.js" />
+    <Content Include="Content\bootstrap-dialog.css" />
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\metisMenu.css" />
+    <Content Include="Content\progressbar.css" />
+    <Content Include="Content\style_light.css" />
+    <Content Include="Content\validationEngine.jquery.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\bckHead.png" />
+    <Content Include="images\bcktr.png" />
+    <Content Include="images\busy.gif" />
+    <Content Include="images\circuit-board.svg" />
+    <Content Include="images\circuit.png" />
+    <Content Include="images\CircuitStatic.jpg" />
+    <Content Include="images\error.png" />
+    <Content Include="images\head.jpg" />
+    <Content Include="images\ii.png" />
+    <Content Include="images\laser.gif" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logoTrans.png" />
+    <Content Include="images\back.jpg" />
+    <Content Include="images\ok.png" />
+    <Content Include="images\pcb.jpg" />
+    <Content Include="images\print.gif" />
+    <Content Include="images\printer.gif" />
+    <Content Include="images\spinner.gif" />
+    <Content Include="images\user_icon.png" />
+    <Content Include="images\Warning.png" />
+    <Content Include="Models\siixsem_laser_mark_cfg.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_laser_mark_cfg.edmx</DependentUpon>
+      <LastGenOutput>siixsem_laser_mark_cfg.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_laser_mark_cfg.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_laser_mark_cfg.edmx</DependentUpon>
+      <LastGenOutput>siixsem_laser_mark_cfg.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_main_dbEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_main_dbEntities.edmx</DependentUpon>
+      <LastGenOutput>siixsem_main_dbEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_main_dbEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_main_dbEntities.edmx</DependentUpon>
+      <LastGenOutput>siixsem_main_dbEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_scrap_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_scrap_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_scrap_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_scrap_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_scrap_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_scrap_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_sys_lblPrint_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_sys_lblPrint_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\siixsem_sys_lblPrint_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+      <LastGenOutput>siixsem_sys_lblPrint_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\adminModels.js" />
+    <Content Include="Scripts\bootstrap-dialog.js" />
+    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <EntityDeploy Include="Models\siixsem_main_dbEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_main_dbEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\siixsem_main_dbEntities.edmx.diagram">
+      <DependentUpon>siixsem_main_dbEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\BalooR.ttf" />
+    <Content Include="fonts\BalooR.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="fonts\fontawesome-webfontba72.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\PTSans-Narrow.woff" />
+    <Content Include="fonts\PTSans-NarrowBold.woff" />
+    <Content Include="fonts\PT_Sans-Narrow-Web-Bold.ttf" />
+    <Content Include="fonts\PT_Sans-Narrow-Web-Regular.ttf" />
+    <Content Include="Controllers\cmbAllModels.ashx" />
+    <Content Include="Controllers\cmbModelsToPrint.ashx" />
+    <Content Include="Controllers\genLblTemplate.ashx" />
+    <Content Include="Controllers\genRegLbls.ashx" />
+    <Content Include="Controllers\getCants.ashx" />
+    <Content Include="Controllers\getFluxesByIdModel.ashx" />
+    <Content Include="Controllers\getNumSidesByIdModel.ashx" />
+    <Content Include="Controllers\getReviews.ashx" />
+    <Content Include="Controllers\getSidesByIdModel.ashx" />
+    <Content Include="Controllers\getVoltsByIdModel.ashx" />
+    <Content Include="Controllers\importPartNumber.ashx" />
+    <Content Include="Controllers\lblWEBService.ashx" />
+    <Content Include="Controllers\printLabel.ashx" />
+    <Content Include="Controllers\cmbLabels.ashx" />
+    <Content Include="Controllers\insertAsignLabel.ashx" />
+    <Content Include="Controllers\getPreviewLabels.ashx" />
+    <Content Include="Controllers\getRevByIdModel.ashx" />
+    <Content Include="Controllers\insertAsignReview.ashx" />
+    <Content Include="Controllers\getColorsByIdModel.ashx" />
+    <Content Include="Controllers\insertSpecToPrint.ashx" />
+    <Content Include="Controllers\login.ashx" />
+    <Content Include="Controllers\getLabelSize.ashx" />
+    <Content Include="Controllers\generateExcelSimos.ashx" />
+    <Content Include="Controllers\getZebraPrinters.ashx" />
+    <Content Include="Content\bootstrap-dialog.less" />
+    <Content Include="Controllers\hasLDM.ashx" />
+    <Content Include="Controllers\getLDMSpec.ashx" />
+    <Content Include="Controllers\hasFourLbls.ashx" />
+    <Content Include="Controllers\getModelSpecF.ashx" />
+    <Content Include="Controllers\getColorModelB.ashx" />
+    <Content Include="Controllers\cmbPrintedDJs.ashx" />
+    <Content Include="Controllers\getIdsDJSpecByNoDJ.ashx" />
+    <Content Include="Controllers\cmbSpecials.ashx" />
+    <Content Include="Controllers\getColorsLed2ByIdModel.ashx" />
+    <Content Include="Controllers\getFluxesLed2ByIdModel.ashx" />
+    <Content Include="Controllers\getVoltsLed2ByIdModel.ashx" />
+    <Content Include="Controllers\genLblTemplateTwoLed.ashx" />
+    <Content Include="Controllers\lblWEBServiceLed2.ashx" />
+    <Content Include="Controllers\getPreviewLabelsLed2.ashx" />
+    <Content Include="Controllers\printLabelLed2.ashx" />
+    <Content Include="Controllers\hasFourSides.ashx" />
+    <Content Include="Controllers\getPickedBins.ashx" />
+    <Content Include="Controllers\getLabelInfo.ashx" />
+    <Content Include="Controllers\isPrinted.ashx" />
+    <Content Include="Controllers\getModelPanelSpec.ashx" />
+    <Content Include="Controllers\hasPanel.ashx" />
+    <Content Include="Controllers\getModelDescription.ashx" />
+    <Content Include="Controllers\getDjQty.ashx" />
+    <Content Include="Controllers\getDjQtyPart.ashx" />
+    <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="Controllers\checkPartM.ashx" />
+    <Content Include="Controllers\insertPartial.ashx" />
+    <EntityDeploy Include="Models\siixsem_sys_lblPrint_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_sys_lblPrint_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\siixsem_sys_lblPrint_db.edmx.diagram">
+      <DependentUpon>siixsem_sys_lblPrint_db.edmx</DependentUpon>
+    </Content>
+    <Content Include="Controllers\checkPartSM.ashx" />
+    <Content Include="Controllers\insertPartialSM.ashx" />
+    <None Include="Connected Services\wsCogiscan\RPCServices.wsdl" />
+    <Content Include="Controllers\printLabelV2.ashx" />
+    <Content Include="Controllers\UpdateDjQty.ashx" />
+    <Content Include="Controllers\insertSerial.ashx" />
+    <Content Include="Controllers\insertModel.ashx" />
+    <Content Include="Controllers\insertSideModel.ashx" />
+    <Content Include="Controllers\insertFluxModel.ashx" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Controllers\printLabelSide.ashx" />
+    <Content Include="Controllers\getStep.ashx" />
+    <Content Include="Controllers\printLabelSideLed2.ashx" />
+    <EntityDeploy Include="Models\siixsem_scrap_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_scrap_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\siixsem_scrap_db.edmx.diagram">
+      <DependentUpon>siixsem_scrap_db.edmx</DependentUpon>
+    </Content>
+    <Content Include="Controllers\updateZPLOS.ashx" />
+    <Content Include="Controllers\updateZPLTS.ashx" />
+    <Content Include="Content\assets\fonts\fa-solid-900.eot" />
+    <Content Include="Content\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\assets\fonts\fa-solid-900.woff" />
+    <Content Include="Content\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Controllers\printLabelLed2V2.ashx" />
+    <Content Include="fonts\Signika-Bold.ttf" />
+    <Content Include="fonts\Signika-Bold.woff" />
+    <Content Include="fonts\PaytoneOne-Regular.ttf" />
+    <Content Include="fonts\PaytoneOne-Regular.woff" />
+    <Content Include="Controllers\updateLblPositionHor.ashx" />
+    <Content Include="Controllers\updateLblPositionVer.ashx" />
+    <Content Include="Controllers\getBinesFromBatch.ashx" />
+    <Content Include="Controllers\ftp_upload.ashx" />
+    <Content Include="Controllers\setMonitor.ashx" />
+    <Content Include="Controllers\getLaserMarks.ashx" />
+    <Content Include="Controllers\cmbLaserDjs.ashx" />
+    <Content Include="Controllers\checkPartLSM.ashx" />
+    <Content Include="Controllers\printLaserSerial.ashx" />
+    <EntityDeploy Include="Models\siixsem_laser_mark_cfg.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siixsem_laser_mark_cfg.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\siixsem_laser_mark_cfg.edmx.diagram">
+      <DependentUpon>siixsem_laser_mark_cfg.edmx</DependentUpon>
+    </Content>
+    <Content Include="Controllers\hasBeenPrinted.ashx" />
+    <Content Include="Controllers\validateUsrPrint.ashx" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Scripts\ftp.js" />
+    <Content Include="Scripts\gui.js" />
+    <Content Include="Scripts\i18n\defaults-am_ET.js" />
+    <Content Include="Scripts\i18n\defaults-am_ET.min.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.min.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.min.js" />
+    <Content Include="Scripts\i18n\defaults-eu.js" />
+    <Content Include="Scripts\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.js" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js.map" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js.map" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.js.map" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js.map" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js.map" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js.map" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js.map" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js.map" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js.map" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js.map" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js.map" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js.map" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js.map" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js.map" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js.map" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.js.map" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js.map" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js.map" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.js.map" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.js.map" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js.map" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js.map" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js.map" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.js.map" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js.map" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js.map" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js.map" />
+    <Content Include="Scripts\i18n\defaults-eu.js.map" />
+    <Content Include="Scripts\i18n\defaults-et_EE.js.map" />
+    <Content Include="Scripts\i18n\defaults-es_ES.js.map" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js.map" />
+    <Content Include="Scripts\i18n\defaults-en_US.js.map" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js.map" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js.map" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js.map" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js.map" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js.map" />
+    <Content Include="Scripts\i18n\defaults-am_ET.js.map" />
+    <Content Include="Scripts\bootstrap-select.min.js.map" />
+    <Content Include="Scripts\bootstrap-select.js.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\busy.gif" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\IniApp.js" />
+    <Content Include="Scripts\interfaces.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validationEngine-es.js" />
+    <Content Include="Scripts\jquery.validationEngine.js" />
+    <Content Include="Scripts\labelsTwoLed.js" />
+    <Content Include="Scripts\laserMark.js" />
+    <Content Include="Scripts\loadConfig\loadModel.js" />
+    <Content Include="Scripts\metisMenu.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\Spanish.json" />
+    <Content Include="Views\dlgPrintLbl\Index.cshtml" />
+    <Content Include="Views\modelSpec\Index.cshtml" />
+    <Content Include="Views\se_models\Create.cshtml" />
+    <Content Include="Views\se_models\Delete.cshtml" />
+    <Content Include="Views\se_models\Details.cshtml" />
+    <Content Include="Views\se_models\Edit.cshtml" />
+    <Content Include="Views\se_models\Index.cshtml" />
+    <Content Include="Views\se_voltageb\Create.cshtml" />
+    <Content Include="Views\se_voltageb\Delete.cshtml" />
+    <Content Include="Views\se_voltageb\Details.cshtml" />
+    <Content Include="Views\se_voltageb\Edit.cshtml" />
+    <Content Include="Views\se_voltageb\Index.cshtml" />
+    <Content Include="Views\se_flxb\Create.cshtml" />
+    <Content Include="Views\se_flxb\Delete.cshtml" />
+    <Content Include="Views\se_flxb\Details.cshtml" />
+    <Content Include="Views\se_flxb\Edit.cshtml" />
+    <Content Include="Views\se_flxb\Index.cshtml" />
+    <Content Include="Views\se_sides\Create.cshtml" />
+    <Content Include="Views\se_sides\Delete.cshtml" />
+    <Content Include="Views\se_sides\Details.cshtml" />
+    <Content Include="Views\se_sides\Edit.cshtml" />
+    <Content Include="Views\se_sides\Index.cshtml" />
+    <Content Include="Views\se_reviews\Create.cshtml" />
+    <Content Include="Views\se_reviews\Delete.cshtml" />
+    <Content Include="Views\se_reviews\Details.cshtml" />
+    <Content Include="Views\se_reviews\Edit.cshtml" />
+    <Content Include="Views\se_reviews\Index.cshtml" />
+    <Content Include="Views\se_projects\Create.cshtml" />
+    <Content Include="Views\se_projects\Delete.cshtml" />
+    <Content Include="Views\se_projects\Details.cshtml" />
+    <Content Include="Views\se_projects\Edit.cshtml" />
+    <Content Include="Views\se_projects\Index.cshtml" />
+    <Content Include="Views\se_users\Create.cshtml" />
+    <Content Include="Views\se_users\Delete.cshtml" />
+    <Content Include="Views\se_users\Details.cshtml" />
+    <Content Include="Views\se_users\Edit.cshtml" />
+    <Content Include="Views\se_users\Index.cshtml" />
+    <Content Include="Views\se_roles\Create.cshtml" />
+    <Content Include="Views\se_roles\Delete.cshtml" />
+    <Content Include="Views\se_roles\Details.cshtml" />
+    <Content Include="Views\se_roles\Edit.cshtml" />
+    <Content Include="Views\se_roles\Index.cshtml" />
+    <Content Include="Views\se_events\Create.cshtml" />
+    <Content Include="Views\se_events\Delete.cshtml" />
+    <Content Include="Views\se_events\Details.cshtml" />
+    <Content Include="Views\se_events\Edit.cshtml" />
+    <Content Include="Views\se_events\Index.cshtml" />
+    <Content Include="Views\se_event_log\Create.cshtml" />
+    <Content Include="Views\se_event_log\Delete.cshtml" />
+    <Content Include="Views\se_event_log\Details.cshtml" />
+    <Content Include="Views\se_event_log\Edit.cshtml" />
+    <Content Include="Views\se_event_log\Index.cshtml" />
+    <Content Include="Views\se_sidesModel\Create.cshtml" />
+    <Content Include="Views\se_sidesModel\Delete.cshtml" />
+    <Content Include="Views\se_sidesModel\Details.cshtml" />
+    <Content Include="Views\se_sidesModel\Edit.cshtml" />
+    <Content Include="Views\se_sidesModel\Index.cshtml" />
+    <Content Include="Views\se_flxModel\Create.cshtml" />
+    <Content Include="Views\se_flxModel\Delete.cshtml" />
+    <Content Include="Views\se_flxModel\Details.cshtml" />
+    <Content Include="Views\se_flxModel\Edit.cshtml" />
+    <Content Include="Views\se_flxModel\Index.cshtml" />
+    <Content Include="Views\se_voltModel\Create.cshtml" />
+    <Content Include="Views\se_voltModel\Delete.cshtml" />
+    <Content Include="Views\se_voltModel\Details.cshtml" />
+    <Content Include="Views\se_voltModel\Edit.cshtml" />
+    <Content Include="Views\se_voltModel\Index.cshtml" />
+    <Content Include="Views\se_lblSizes\Create.cshtml" />
+    <Content Include="Views\se_lblSizes\Delete.cshtml" />
+    <Content Include="Views\se_lblSizes\Details.cshtml" />
+    <Content Include="Views\se_lblSizes\Edit.cshtml" />
+    <Content Include="Views\se_lblSizes\Index.cshtml" />
+    <Content Include="Views\se_densities\Create.cshtml" />
+    <Content Include="Views\se_densities\Delete.cshtml" />
+    <Content Include="Views\se_densities\Details.cshtml" />
+    <Content Include="Views\se_densities\Edit.cshtml" />
+    <Content Include="Views\se_densities\Index.cshtml" />
+    <Content Include="Views\se_datamatrix\Create.cshtml" />
+    <Content Include="Views\se_datamatrix\Delete.cshtml" />
+    <Content Include="Views\se_datamatrix\Details.cshtml" />
+    <Content Include="Views\se_datamatrix\Edit.cshtml" />
+    <Content Include="Views\se_datamatrix\Index.cshtml" />
+    <Content Include="Views\se_labels\Create.cshtml" />
+    <Content Include="Views\se_labels\Delete.cshtml" />
+    <Content Include="Views\se_labels\Details.cshtml" />
+    <Content Include="Views\se_labels\Edit.cshtml" />
+    <Content Include="Views\se_labels\Index.cshtml" />
+    <Content Include="Views\se_zpl\Create.cshtml" />
+    <Content Include="Views\se_zpl\Delete.cshtml" />
+    <Content Include="Views\se_zpl\Details.cshtml" />
+    <Content Include="Views\se_zpl\Edit.cshtml" />
+    <Content Include="Views\se_zpl\Index.cshtml" />
+    <Content Include="Views\se_asignLabels\Create.cshtml" />
+    <Content Include="Views\se_asignLabels\Delete.cshtml" />
+    <Content Include="Views\se_asignLabels\Details.cshtml" />
+    <Content Include="Views\se_asignLabels\Edit.cshtml" />
+    <Content Include="Views\se_asignLabels\Index.cshtml" />
+    <Content Include="Views\se_revModel\Create.cshtml" />
+    <Content Include="Views\se_revModel\Delete.cshtml" />
+    <Content Include="Views\se_revModel\Details.cshtml" />
+    <Content Include="Views\se_revModel\Edit.cshtml" />
+    <Content Include="Views\se_revModel\Index.cshtml" />
+    <Content Include="Views\modelEngSpec\Index.cshtml" />
+    <Content Include="Views\ldmModels\Index.cshtml" />
+    <Content Include="Views\remaining\Index.cshtml" />
+    <Content Include="Views\specials\Index.cshtml" />
+    <Content Include="Views\rayben\Index.cshtml" />
+    <Content Include="Views\infoModel\Index.cshtml" />
+    <Content Include="Views\checkDJ\Index.cshtml" />
+    <Content Include="Views\djAlreadyPrint\Index.cshtml" />
+    <Content Include="Views\flxsModel\Create.cshtml" />
+    <Content Include="Views\flxsModel\Delete.cshtml" />
+    <Content Include="Views\flxsModel\Details.cshtml" />
+    <Content Include="Views\flxsModel\Edit.cshtml" />
+    <Content Include="Views\flxsModel\Index.cshtml" />
+    <Content Include="Views\addFlux\Index.cshtml" />
+    <Content Include="Views\addFluxModel\Create.cshtml" />
+    <Content Include="Views\addFluxModel\Delete.cshtml" />
+    <Content Include="Views\addFluxModel\Details.cshtml" />
+    <Content Include="Views\addFluxModel\Edit.cshtml" />
+    <Content Include="Views\addFluxModel\Index.cshtml" />
+    <Content Include="Views\addColorModel\Create.cshtml" />
+    <Content Include="Views\addColorModel\Delete.cshtml" />
+    <Content Include="Views\addColorModel\Details.cshtml" />
+    <Content Include="Views\addColorModel\Edit.cshtml" />
+    <Content Include="Views\addColorModel\Index.cshtml" />
+    <Content Include="Views\addVoltModel\Create.cshtml" />
+    <Content Include="Views\addVoltModel\Delete.cshtml" />
+    <Content Include="Views\addVoltModel\Details.cshtml" />
+    <Content Include="Views\addVoltModel\Edit.cshtml" />
+    <Content Include="Views\addVoltModel\Index.cshtml" />
+    <Content Include="Views\addColorMod2\Create.cshtml" />
+    <Content Include="Views\addColorMod2\Delete.cshtml" />
+    <Content Include="Views\addColorMod2\Details.cshtml" />
+    <Content Include="Views\addColorMod2\Edit.cshtml" />
+    <Content Include="Views\addColorMod2\Index.cshtml" />
+    <Content Include="Views\addFluxModel2\Create.cshtml" />
+    <Content Include="Views\addFluxModel2\Delete.cshtml" />
+    <Content Include="Views\addFluxModel2\Details.cshtml" />
+    <Content Include="Views\addFluxModel2\Edit.cshtml" />
+    <Content Include="Views\addFluxModel2\Index.cshtml" />
+    <Content Include="Views\addVoltModel2\Create.cshtml" />
+    <Content Include="Views\addVoltModel2\Delete.cshtml" />
+    <Content Include="Views\addVoltModel2\Details.cshtml" />
+    <Content Include="Views\addVoltModel2\Edit.cshtml" />
+    <Content Include="Views\addVoltModel2\Index.cshtml" />
+    <Content Include="Views\addSidesModel\Create.cshtml" />
+    <Content Include="Views\addSidesModel\Delete.cshtml" />
+    <Content Include="Views\addSidesModel\Details.cshtml" />
+    <Content Include="Views\addSidesModel\Edit.cshtml" />
+    <Content Include="Views\addSidesModel\Index.cshtml" />
+    <Content Include="Views\siixsem_sidesModel\Create.cshtml" />
+    <Content Include="Views\siixsem_sidesModel\Delete.cshtml" />
+    <Content Include="Views\siixsem_sidesModel\Details.cshtml" />
+    <Content Include="Views\siixsem_sidesModel\Edit.cshtml" />
+    <Content Include="Views\siixsem_sidesModel\Index.cshtml" />
+    <Content Include="Views\addModel\Create.cshtml" />
+    <Content Include="Views\addModel\Delete.cshtml" />
+    <Content Include="Views\addModel\Details.cshtml" />
+    <Content Include="Views\addModel\Edit.cshtml" />
+    <Content Include="Views\addModel\Index.cshtml" />
+    <Content Include="Views\fluxes\Create.cshtml" />
+    <Content Include="Views\fluxes\Delete.cshtml" />
+    <Content Include="Views\fluxes\Details.cshtml" />
+    <Content Include="Views\fluxes\Edit.cshtml" />
+    <Content Include="Views\fluxes\Index.cshtml" />
+    <Content Include="Views\voltages\Create.cshtml" />
+    <Content Include="Views\voltages\Delete.cshtml" />
+    <Content Include="Views\voltages\Details.cshtml" />
+    <Content Include="Views\voltages\Edit.cshtml" />
+    <Content Include="Views\voltages\Index.cshtml" />
+    <Content Include="Views\config\Index.cshtml" />
+    <Content Include="Views\zplModels\Create.cshtml" />
+    <Content Include="Views\zplModels\Delete.cshtml" />
+    <Content Include="Views\zplModels\Details.cshtml" />
+    <Content Include="Views\zplModels\Edit.cshtml" />
+    <Content Include="Views\zplModels\Index.cshtml" />
+    <Content Include="Views\editZPL\Create.cshtml" />
+    <Content Include="Views\editZPL\Delete.cshtml" />
+    <Content Include="Views\editZPL\Details.cshtml" />
+    <Content Include="Views\editZPL\Edit.cshtml" />
+    <Content Include="Views\editZPL\Index.cshtml" />
+    <Content Include="Views\editZPLModels\Index.cshtml" />
+    <Content Include="Views\dlgMark\Index.cshtml" />
+    <Content Include="Views\laserMark\Index.cshtml" />
+    <Content Include="Views\authDialog\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="cargas\" />
+    <Folder Include="DJ_LINK\" />
+    <Folder Include="Labels\" />
+    <Folder Include="XML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\wsCogiscan\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\file_monitor\file_monitor.csproj">
+      <Project>{da50bc06-9307-4b94-aa4b-0630fd195491}</Project>
+      <Name>file_monitor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56977</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56979/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\IBM.Data.DB.Provider.11.1.4040.4\build\IBM.Data.DB.Provider.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IBM.Data.DB.Provider.11.1.4040.4\build\IBM.Data.DB.Provider.targets'))" />
+  </Target>
+  <Import Project="..\packages\IBM.Data.DB.Provider.11.1.4040.4\build\IBM.Data.DB.Provider.targets" Condition="Exists('..\packages\IBM.Data.DB.Provider.11.1.4040.4\build\IBM.Data.DB.Provider.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

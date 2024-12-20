@@ -1,0 +1,362 @@
+﻿@{
+    string _lvl = "";
+    String _cd = "";
+    int _idU = 0;
+    if (Request.IsAuthenticated)
+    {
+        try
+        {
+            _lvl = Request.Cookies["_lvl"].Value;
+            _idU = Convert.ToInt32(Request.Cookies["_idU"].Value);
+            _cd = Request.Cookies["_idU"].Value;
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+}
+
+@if (Request.IsAuthenticated)
+{
+
+    <input id="txtLblCodeL" type="hidden" value="658528KEZ8GB8241XXXXX" />
+    <input id="txtLblCodeL1" type="hidden" value="658528KEZ8GB8241XXXXX" />
+    <input id="txtLblCodeL2" type="hidden" value="658528KEZ8GB8241XXXXX" />
+    <input id="txtLblCodeR" type="hidden" value="648528KEZ8GB8241XXXXX" />
+    <input id="txtLblCodeR1" type="hidden" value="648528KEZ8GB8241XXXXX" />
+    <input id="txtLblCodeR2" type="hidden" value="648528KEZ8GB8241XXXXX" />
+    <input id="txtDjNo" type="hidden" value="111111" />
+    <input id="txtAName" type="hidden" value="111111" />
+    <input id="txtDateDJ" type="hidden" value="111111" />
+    <input id="isRem" type="hidden" value="0" />
+    <input id="txtModelDJ" type="hidden" value="111111" />
+    <input id="txtDjGrp" type="hidden" value="111111" />
+    <input id="txtTPrint" type="hidden" value="111111" />
+    <input id="txtLvlUser" type="hidden" value="@_lvl" />
+    <input id="txtidUser" type="hidden" value="@_idU" />
+
+    <div class="app-page-title">
+        <div class="divider"></div>
+        <div class="page-title-wrapper" style="color:white;">
+            <div class="page-title-actions">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="selModel" style="color:white;">MODELO</label>
+                    <div class="col-sm-8">
+                        <select class="form-control col-sm-2" name="selModel" id="selModel"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-heading" style="color:white;">
+                <div class="page-title-icon">
+                    <i class="pe-7s-file icon-gradient bg-mean-fruit"></i>
+                </div>
+                <div>
+                    <div id="txtDJ" style="color:white;font-weight:bold;"></div>
+                    <div class="page-title-subheading" id="printDJ" style="color:red;font-weight:bold;">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="overlay_printed">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header-tab-animation card-header bg-midnight-bloom" style="color:white;">
+                            <div class="card-header-title">
+                                <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                Label Configuration - Flux: <label id="txtFlux" style="margin-bottom:0px;"></label> Color: <label id="txtColor" style="margin-bottom:0px;"></label> Voltage: <label id="txtVolt" style="margin-bottom:0px;"></label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" style="font-size:10px;">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selSideL">SIDE</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selSideL" id="selSideL" style="width:80px;font-size:10px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selFlxL">FLUX</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selFlxL" id="selFlxL" style="width:60px;font-size:10px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selCBL">COLOR</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selCBL" id="selCBL" style="width:60px;font-size:10px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selVBL">VOLTAGE</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selVBL" id="selVBL" style="width:60px;font-size:10px;"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div style="clear:both;"></div>*@
+                                    <div id="rSide" class="col-md-12 col-lg-6">
+                                        @*<div class="col-md-12 col-lg-6">*@
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selSideR">SIDE</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selSideR" id="selSideR" style="width:80px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selFlxR">FLUX</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selFlxR" id="selFlxR" style="width:60px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selCBR">COLOR</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selCBR" id="selCBR" style="width:60px;"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="selVBR">VOLTAGE</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control col-sm-2" name="selVBR" id="selVBR" style="width:60px;"></select>
+                                            </div>
+                                        </div>
+                                        @*</div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6" style="padding-top: 70px;">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header bg-midnight-bloom" style="color:white;">
+                            <div class="card-header-title">
+                                <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                Preview
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="lblBoxPrev">
+                                        <div class="width"></div>
+                                        <div class="height"></div>
+                                        <div id="lblFrameL" style="padding: 20px;">
+                                            <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 15px;margin:10px;" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="width"></div>
+                                    <div class="height2"></div>
+                                    <div class="lblBoxPrev">
+                                        <div id="lblFrameR" style="padding: 20px;">
+                                            <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="width: 60%;margin-left:auto;margin-right:auto;">
+                <div class="main-card mb-3 card" style="width:100%;">
+                    <div class="card-body" style="display:flex;">
+                        <div class="col-md-4" style="text-align: center;">
+                            <h5 class="card-title">Review</h5>
+                            <select class="form-control col-sm-2" name="selRev" id="selRev" style="width:60px;"></select>
+                        </div>
+                        <div class="col-md-4 divcol" style="border-right-width:1px;">
+                            <h5 class="card-title">Print Mode</h5>
+                            <div id="printM" class="row well" style="width:250px;font-family:'pt_sansr';">
+                                <div class="radio radio-success radio-inline">
+                                    <input type="radio" id="oneStep" value="1" name="printMode" checked="checked">
+                                    <label for="oneStep" id="lblTPrint">One Step</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 divcol" style="border-right-width:1px;">
+                            <h5 class="card-title">Print Out</h5>
+                            <div id="printM" class="row well" style="width:250px;font-family:'pt_sansr';">
+                                <div class="radio radio-success radio-inline">
+                                    <input type="radio" id="btnlabelOut" value="1" name="printOut" checked="checked">
+                                    <label for="btnlabelOut" id="lblOut">Label</label>
+                                </div>
+                                <div class="radio radio-success radio-inline" style="margin-right:-15px;">
+                                    <input type="radio" id="btnXMLOut" value="2" name="printOut">
+                                    <label for="btnXMLOut">XML</label>
+                                </div>
+                                @*<div style="clear:both;"></div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="width: 100%;margin-left:auto;margin-right:auto;">
+                <div class="mb-3 card text-white card-body bg-vicious-stance sidebar-text-light" @*style="background-color: rgb(51, 51, 51); border-color: rgb(51, 51, 51); "*@>
+                    <h5 class="text-white card-title">
+                        Label quantity
+                        <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnImpEt" style="float:right;">
+                            Imprimir etiquetas
+                        </button>
+                    </h5>
+                    <div style="width: auto; margin-top: 3px; color:black;">
+                        <div class="card-border mb-3 card card-body border-warning">
+                            <form class="form-inline" role="form">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="pcbDjQty">PCB DJ PANELS</label>
+                                        <input class="form-control" id="pcbDjQty" name="pcbDjQty" style="width:70px;" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="pcbQty">PCB PER PANEL</label>
+                                        <input class="form-control" id="pcbQty" name="pcbQty" style="width:70px;" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="selCant">LABEL QTY TO PRINT</label>
+                                        <input class="form-control" id="selCant" name="selCant" style="width:70px;" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;" id="divPanel">
+                                        <label id="hasPanel" style="font-weight:bold;"></label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-border mb-3 card card-body border-warning">
+                            <form class="form-inline well" role="form">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <input type="checkbox" id="partPrint">
+                                        <label class="form-check-label" for="partPrint">PARTIAL PRINT</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="pcbDjQtyPar">PCB DJ QTY</label>
+                                        <input value="" class="form-control" id="pcbDjQtyPar" name="pcbDjQtyPar" style="width:70px;margin-left:25px;" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="pcbQtyPar">PCB QTY</label>
+                                        <input value="" class="form-control" id="pcbQtyPar" style="width:70px;" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 divcol" style="text-align: center;">
+                                    <div class="widget-content" style="display: inline-flex;">
+                                        <label for="selCantPar">LABEL QTY TO PRINT</label>
+                                        <input value="" class="form-control" id="selCantPar" style="width:70px;" disabled />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#btnGenEt").click(function () {
+        });
+
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#oneStep').prop('disabled', true);
+            $('#twoStep').prop('disabled', true);
+            $("#pcbDjQtyPar").on('keypress', function (e) {
+                if (e.which == 13) {
+                    getDjQtyPart();
+                }
+            });
+            $('#partPrint').on('click', function () {
+                if ($(this).is(':checked')) {
+                    $('#pcbDjQtyPar').prop('disabled', false);
+                    $('#pcbDjQtyPar').val($('#pcbDjQty').val());
+                    $('#pcbDjQtyPar').focus();
+                    getDjQtyPart();
+                } else {
+                    $('#pcbDjQtyPar').val('');
+                    $("#pcbQtyPar").val("");
+                    $("#selCantPar").val("");
+                    $('#pcbDjQtyPar').prop('disabled', true);
+                }
+            });
+            getModelsToPrint();
+
+            //getReviews();
+
+            $("#formCant").validationEngine('attach');
+            $("#btnImpEt").click(function () {
+                if (!jQuery("#formCant").validationEngine('validate')) {
+                    return false;
+                }
+
+                var qty;
+                var pcbQty;
+
+                var printMode = $("input[name='printMode']:checked").val();
+
+                if ($("#partPrint").is(':checked')) {
+                    getDjQtyPart();
+                    qty = $("#selCantPar").val();
+                    pcbQty = $("#pcbDjQtyPar").val();
+                } else {
+                    qty = $("#selCant").val();
+                    pcbQty = $("#pcbDjQty").val();
+                }
+                if (!hasBeenPrinted($("#txtDjNo").val(), $("#selModel").val()))
+                    checkPartM($("#txtDjNo").val(), $("#selFlxL").val(), $("#selVBL").val(), $("#selCBL").val(), qty, pcbQty, "1");
+
+                //getViewPrintLbl($("#selModel").val(), $("#selSideL").val(), $("#selSideR").val(), $("#selFlxL").val(), $("#selVBL").val(), $("#selCBL").val(), $("#selRev").val(), qty);
+            });
+            $("#btnImpNumP").click(function () {
+                getDlgUpdatePN();
+            });
+            $("#btnSaveEsp").click(function () {
+                if (!jQuery("#formCant").validationEngine('validate')) {
+                    return false;
+                }
+            });
+
+        });
+    </script>
+}
+else
+{
+    <div class="alert alert-warning warningBar" role="alert" style="margin-top:90px;margin-left:auto;margin-right:auto;width:45%;">
+        Debes iniciar sesión para usar el sistema...
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnLogin" style="margin-left:30px;">
+            Iniciar sesion...
+        </button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnLogin").click(function () {
+                getDlgLogin();
+            });
+        });
+    </script>
+
+}
+
+
+

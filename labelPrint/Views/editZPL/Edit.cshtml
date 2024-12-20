@@ -1,0 +1,87 @@
+﻿@model labelPrint.Models.siixsem_lblZPL_t
+
+@*<div class="window">*@
+<input type="hidden" id="typezpl" value="0" />
+
+<div class="window-content" style="background-color:lightgray;background-image:none;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.se_id_zpl)
+        <div class="form-group">
+            @Html.LabelFor(model => model.se_name, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.se_name, new { @class = "form-control", style = "width: 300px; height:30px;" })
+                @Html.ValidationMessageFor(model => model.se_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div id="zplOS">
+            <div class="form-group">
+                @Html.LabelFor(model => model.se_str_zpl_one, "Uno al paso", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.se_str_zpl_one, new { @class = "form-control", style = "width: 600px; height:350px;" })
+                    @Html.ValidationMessageFor(model => model.se_str_zpl_one, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div id="zplTS">
+            <div class="form-group">
+                @Html.LabelFor(model => model.se_str_zpl_two, "Dos al paso", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.se_str_zpl_two, new { @class = "form-control", style = "width: 600px; height:350px;" })
+                    @Html.ValidationMessageFor(model => model.se_str_zpl_two, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.se_str_zpl_preview, "Preview", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.se_str_zpl_preview, new { @class = "form-control", style = "width: 600px; height:350px;" })
+                    @Html.ValidationMessageFor(model => model.se_str_zpl_preview, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.se_str_zpl_two_zt610, "Uno al paso Serializado", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.se_str_zpl_two_zt610, new { @class = "form-control", style = "width: 600px; height:350px;" })
+                    @Html.ValidationMessageFor(model => model.se_str_zpl_two_zt610, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.se_str_zpl_two_cab, "ZPL CAB", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.se_str_zpl_two_cab, new { @class = "form-control", style = "width: 600px; height:350px;" })
+                    @Html.ValidationMessageFor(model => model.se_str_zpl_two_cab, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        </div>
+        }
+    </div>
+<br />
+<div class="form-group" style="float:right;">
+    <div class="col-md-offset-2 col-md-10">
+        <input id="btnSave" type="button" value="Guardar" class="btn btn-success" />
+    </div>
+</div>
+<div style="clear:both;"></div>
+
+<script type="text/javascript">
+    $("#btnSave").click(function () {
+        //alert($("#typezpl").val());
+        if ($("#typezpl").val() == 0) updateZPLOS();
+        else updateZPLTS();
+        return;
+    });
+</script>
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@*</div>*@

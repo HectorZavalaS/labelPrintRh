@@ -1,0 +1,82 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_lblModels_td>
+<script type="text/javascript">
+    function get_model(id) {
+        getModelDesc(id);
+    }
+
+    //block();
+    blockV2("Cargando modelos...");
+</script>
+<div class="window" style="margin-top:70px;width:90%;">
+    <div class="window-title">ETIQUETAS / LABELS</div>
+    <div class="window-content">
+        <div class="well" style="font-size:14px;font-family:pt_sansr;background-color:white;">
+            <table class="table" id="tblAsignLabels">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.se_id_model)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.siixsem_lblTemplates_t.se_id_label)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div id="modelDesc_@item.se_id_model" style="color:royalblue;font-weight:bold;"></div>
+                                <script type="text/javascript">
+                                        getModelDesc(@item.se_id_model);
+                                </script>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.siixsem_lblTemplates_t.siixsem_lblZPL_t.se_name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.se_id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.se_id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.se_id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnNewAsignLabel" style="margin-left:30px;float:right;">
+            <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+        </button>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblAsignLabels').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+            removeOverlay();
+            $("#tblAsignLabels").show("explode");
+            $("#btnNewAsignLabel").click(function () {
+                getDlgCreateAsignLabel();
+                //location.reload(true);
+            });
+            $(".edit").html("<span class='glyphicon glyphicon-pencil' style='margin:0;'></span>");
+            $(".delete").html("<span class='glyphicon glyphicon-trash' style='margin:0;'></span>");
+            $(".det").html("<span class='glyphicon glyphicon-list-alt' style='margin:0;'></span>");
+        });
+    </script>
+}

@@ -1,0 +1,61 @@
+﻿@model labelPrint.Models.siixsem_revModel_td
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="window" style="margin-top:70px;width:400px;color:white;">
+    <div class="window-content">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <hr />
+            <div class="form-horizontal well">
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.se_id)
+                @Html.HiddenFor(model => model.se_id_model)
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Model</label>
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.se_id_model, new { htmlAttributes = new { @class = "form-control" } })*@
+                        <input type="text" class="form-control" id="modelDesc_@Model.se_id_model" value="" />
+                        @Html.ValidationMessageFor(model => model.se_id_model, "", new { @class = "text-danger" })
+                        <script type="text/javascript">
+                              getModelDesc(@Model.se_id_model);
+                        </script>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Review</label>
+                    <div class="col-md-10">
+                        @*<select id="selRev" class="form-control" data-live-search="true" data-size="10" data-live-search-style="contains" style="width:100px;" data-style="btn-info"></select>*@
+                        @Html.DropDownList("se_id_review", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.se_id_review, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr />
+            <div class="form-group" style="float:right;">
+                <div style="float:left;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-sm btn-danger" })
+                </div>
+                <div style="float:right;margin-left:15px;">
+                    @*<input type="submit" value="Save" class="btn btn-default" />*@
+                    <button type="submit" class="btn btn-sm btn-success" id="btnSaveAsignRev">
+                        <span class='glyphicon glyphicon-floppy-disk' style='margin-right:5px;'></span>Guardar
+                    </button>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

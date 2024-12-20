@@ -1,0 +1,25 @@
+﻿@model labelPrint.Models.siixsem_families_t
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>Descripción</dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            Modelo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_car_model)
+        </dd>
+
+    </dl>
+</div>
+<div style="float:right;">
+    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cerrar</button>
+</div>
+<div style="clear:both;"></div>

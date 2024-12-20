@@ -1,0 +1,66 @@
+﻿@model labelPrint.Models.siixsem_lblZPL_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_lblZPL_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_str_zpl_one)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_str_zpl_one)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_str_zpl_two)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_str_zpl_two)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_str_zpl_preview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_str_zpl_preview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_str_zpl_two_zt610)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_str_zpl_two_zt610)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_str_zpl_two_cab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_str_zpl_two_cab)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_zpl }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

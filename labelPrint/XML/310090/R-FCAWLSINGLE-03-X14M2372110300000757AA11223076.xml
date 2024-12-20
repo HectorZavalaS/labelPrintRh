@@ -1,0 +1,49 @@
+<Parameters>
+  <Parameter name="modelName">R-FCAWLSINGLE-03-X14M</Parameter>
+  <Parameter name="timeStamp">2023-03-22 14:46:50.427</Parameter>
+  <Extensions>
+    <ProductGroup barcode="2372110300000757AA11223076">
+	  <Product location="1">2372110300000758AA11223076</Product>
+  <Product location="2">2372110300000759AA11223076</Product>
+  <Product location="3">2372110300000760AA11223076</Product>
+  <Product location="4">2372110300000761AA11223076</Product>
+  <Product location="5">2372110300000762AA11223076</Product>
+  <Product location="6">2372110300000763AA11223076</Product>
+  <Product location="7">2372110300000764AA11223076</Product>
+  <Product location="8">2372110300000765AA11223076</Product>
+  <Product location="9">2372110300000766AA11223076</Product>
+  <Product location="10">2372110300000767AA11223076</Product>
+  <Product location="11">2372110300000768AA11223076</Product>
+  <Product location="12">2372110300000769AA11223076</Product>
+  <Product location="13">2372110300000770AA11223076</Product>
+  <Product location="14">2372110300000771AA11223076</Product>
+  <Product location="15">2372110300000772AA11223076</Product>
+  <Product location="16">2372110300000773AA11223076</Product>
+  <Product location="17">2372110300000774AA11223076</Product>
+  <Product location="18">2372110300000775AA11223076</Product>
+  <Product location="19">2372110300000776AA11223076</Product>
+  <Product location="20">2372110300000777AA11223076</Product>
+  <Product location="21">2372110300000778AA11223076</Product>
+  <Product location="22">2372110300000779AA11223076</Product>
+  <Product location="23">2372110300000780AA11223076</Product>
+  <Product location="24">2372110300000781AA11223076</Product>
+  <Product location="25">2372110300000782AA11223076</Product>
+  <Product location="26">2372110300000783AA11223076</Product>
+  <Product location="27">2372110300000784AA11223076</Product>
+  <Product location="28">2372110300000785AA11223076</Product>
+  <Product location="29">2372110300000786AA11223076</Product>
+  <Product location="30">2372110300000787AA11223076</Product>
+  <Product location="31">2372110300000788AA11223076</Product>
+  <Product location="32">2372110300000789AA11223076</Product>
+  <Product location="33">2372110300000790AA11223076</Product>
+  <Product location="34">2372110300000791AA11223076</Product>
+  <Product location="35">2372110300000792AA11223076</Product>
+  <Product location="36">2372110300000793AA11223076</Product>
+  <Product location="37">2372110300000794AA11223076</Product>
+  <Product location="38">2372110300000795AA11223076</Product>
+  <Product location="39">2372110300000796AA11223076</Product>
+  <Product location="40">2372110300000797AA11223076</Product>
+  
+    </ProductGroup>
+  </Extensions>
+</Parameters>

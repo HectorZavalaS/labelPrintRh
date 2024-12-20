@@ -1,0 +1,67 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_sides_t>
+
+<div class="window" style="margin-top:70px;width:60%;">
+    <div class="window-title">LADOS / SIDES</div>
+    <div class="window-content">
+        <div class="well" style="font-size:14px;font-family:pt_sansr;background-color:white;">
+            <table class="table" id="tblSides">
+                <thead>
+                    <tr>
+                        <th>DESCRIPCION</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.se_description)
+                            </td>
+                            <td>
+                                <center>
+                                    <a href="#" data-toggle="modal" data-target="#dlgGeneral" class="btn btn-xs btn-primary btnNEditProy" onclick="getDlgEditSide(@item.se_id_side);">
+                                        <span class='glyphicon glyphicon-pencil' style='margin:0;'></span>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#dlgGeneral" class="btn btn-xs btn-primary btnDetailsProy" onclick="getDlgDetailsSide(@item.se_id_side);">
+                                        <span class='glyphicon glyphicon-list-alt' style='margin:0;'></span>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#dlgGeneral" class="btn btn-xs btn-primary btnDeleteProy" onclick="getDlgDeleteSide(@item.se_id_side);">
+                                        <span class='glyphicon glyphicon-trash' style='margin:0;'></span>
+                                    </a>
+                                </center>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnNewModel" style="margin-left:30px;float:right;">
+            <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+        </button>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblSides').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+            $("#btnNewModel").click(function () {
+                getDlgCreateSide();
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,2225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="siixsem_main_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="siixsem_colorb_t">
+          <Key>
+            <PropertyRef Name="se_id_cb" />
+          </Key>
+          <Property Name="se_id_cb" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_colorsb_led2_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_colorb" Type="int" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_lblTag" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_colorsb_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_colorb" Type="int" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_lblTag" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_families_t">
+          <Key>
+            <PropertyRef Name="se_id_family" />
+          </Key>
+          <Property Name="se_id_family" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_car_model" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_flxb_t">
+          <Key>
+            <PropertyRef Name="se_id_fb" />
+          </Key>
+          <Property Name="se_id_fb" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="se_flx_lbl" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_flxsModel_led2_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_flx" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_flxsModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_flx" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_lblTagColor_t">
+          <Key>
+            <PropertyRef Name="se_id_lblTag" />
+          </Key>
+          <Property Name="se_id_lblTag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_lblTag" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_ldmModels_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model_led" Type="int" Nullable="false" />
+          <Property Name="se_id_model_ldm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_models_t">
+          <Key>
+            <PropertyRef Name="se_id_model" />
+          </Key>
+          <Property Name="se_id_model" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_id_family" Type="int" Nullable="false" />
+          <Property Name="se_is_special" Type="int" Nullable="false" />
+          <Property Name="se_valid" Type="int" Nullable="false" />
+          <Property Name="se_serial_continuos" Type="int" Nullable="false" />
+          <Property Name="se_two_led" Type="int" Nullable="false" />
+          <Property Name="se_dfc_ifc" Type="int" Nullable="false" />
+          <Property Name="se_four_sides" Type="int" Nullable="false" />
+          <Property Name="se_cover_frame" Type="int" Nullable="false" />
+          <Property Name="se_num_pcb" Type="real" Nullable="false" />
+          <Property Name="se_laser_mark" Type="int" Nullable="false" />
+          <Property Name="se_has_panelLbl" Type="int" Nullable="false" />
+          <Property Name="se_is_ldm" Type="int" Nullable="false" />
+          <Property Name="se_one_step" Type="int" Nullable="false" />
+          <Property Name="se_two_step" Type="int" Nullable="false" />
+          <Property Name="se_three_step" Type="int" Nullable="false" />
+          <Property Name="se_xml" Type="int" Nullable="false" />
+          <Property Name="se_is_pallet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_modFourLbls_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model_a" Type="int" Nullable="false" />
+          <Property Name="se_id_model_b" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_printers_t">
+          <Key>
+            <PropertyRef Name="se_id_printer" />
+          </Key>
+          <Property Name="se_id_printer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="se_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_is_printing" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_sides_t">
+          <Key>
+            <PropertyRef Name="se_id_side" />
+          </Key>
+          <Property Name="se_id_side" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_sidesModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_side" Type="int" Nullable="false" />
+          <Property Name="se_part_num_tr" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_int_part_num" Type="nvarchar" MaxLength="50" />
+          <Property Name="se_cust_part_num" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_oracle_par_num" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="se_assembly_name" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_user_role_t">
+          <Key>
+            <PropertyRef Name="se_id_rol" />
+          </Key>
+          <Property Name="se_id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_descr_permissions" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="se_level" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_users_t">
+          <Key>
+            <PropertyRef Name="se_id_user" />
+          </Key>
+          <Property Name="se_id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="se_pass" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="se_id_rol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_voltageb_t">
+          <Key>
+            <PropertyRef Name="se_id_volt" />
+          </Key>
+          <Property Name="se_id_volt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="se_volt_lbl" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_VoltsModel_led2_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_volt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_VoltsModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="se_id_model" Type="int" Nullable="false" />
+          <Property Name="se_id_volt" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_colorb_t">
+          <End Role="siixsem_colorb_t" Type="Self.siixsem_colorb_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_led2_td" Type="Self.siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_colorb_t">
+              <PropertyRef Name="se_id_cb" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_colorb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t">
+          <End Role="siixsem_lblTagColor_t" Type="Self.siixsem_lblTagColor_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_led2_td" Type="Self.siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_lblTagColor_t">
+              <PropertyRef Name="se_id_lblTag" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_lblTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_led2_td" Type="Self.siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_colorb_t">
+          <End Role="siixsem_colorb_t" Type="Self.siixsem_colorb_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_td" Type="Self.siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_colorb_t">
+              <PropertyRef Name="se_id_cb" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_colorb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_lblTagColor_t">
+          <End Role="siixsem_lblTagColor_t" Type="Self.siixsem_lblTagColor_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_td" Type="Self.siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_lblTagColor_t">
+              <PropertyRef Name="se_id_lblTag" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_lblTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_colorsb_td" Type="Self.siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_led2_td_siixsem_flxb_t">
+          <End Role="siixsem_flxb_t" Type="Self.siixsem_flxb_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_led2_td" Type="Self.siixsem_flxsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_flxb_t">
+              <PropertyRef Name="se_id_fb" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_led2_td">
+              <PropertyRef Name="se_id_flx" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_led2_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_led2_td" Type="Self.siixsem_flxsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_td_siixsem_flxb_t">
+          <End Role="siixsem_flxb_t" Type="Self.siixsem_flxb_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_td" Type="Self.siixsem_flxsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_flxb_t">
+              <PropertyRef Name="se_id_fb" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_td">
+              <PropertyRef Name="se_id_flx" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_td" Type="Self.siixsem_flxsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_ldmModels_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_ldmModels_td" Type="Self.siixsem_ldmModels_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_ldmModels_td">
+              <PropertyRef Name="se_id_model_led" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_ldmModels_td_siixsem_models_t1">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_ldmModels_td" Type="Self.siixsem_ldmModels_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_ldmModels_td">
+              <PropertyRef Name="se_id_model_ldm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_models_t_siixsem_families_t">
+          <End Role="siixsem_families_t" Type="Self.siixsem_families_t" Multiplicity="1" />
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_families_t">
+              <PropertyRef Name="se_id_family" />
+            </Principal>
+            <Dependent Role="siixsem_models_t">
+              <PropertyRef Name="se_id_family" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_modFourLbls_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_modFourLbls_td" Type="Self.siixsem_modFourLbls_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_modFourLbls_td">
+              <PropertyRef Name="se_id_model_a" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_modFourLbls_td_siixsem_models_t1">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_modFourLbls_td" Type="Self.siixsem_modFourLbls_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_modFourLbls_td">
+              <PropertyRef Name="se_id_model_b" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_sidesModels_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_sidesModel_td" Type="Self.siixsem_sidesModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_sidesModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_sidesModels_td_siixsem_sides_t">
+          <End Role="siixsem_sides_t" Type="Self.siixsem_sides_t" Multiplicity="1" />
+          <End Role="siixsem_sidesModel_td" Type="Self.siixsem_sidesModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_sides_t">
+              <PropertyRef Name="se_id_side" />
+            </Principal>
+            <Dependent Role="siixsem_sidesModel_td">
+              <PropertyRef Name="se_id_side" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_users_t_siixsem_user_role_t">
+          <End Role="siixsem_user_role_t" Type="Self.siixsem_user_role_t" Multiplicity="1" />
+          <End Role="siixsem_users_t" Type="Self.siixsem_users_t" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_user_role_t">
+              <PropertyRef Name="se_id_rol" />
+            </Principal>
+            <Dependent Role="siixsem_users_t">
+              <PropertyRef Name="se_id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_led2_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_led2_td" Type="Self.siixsem_VoltsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t">
+          <End Role="siixsem_voltageb_t" Type="Self.siixsem_voltageb_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_led2_td" Type="Self.siixsem_VoltsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_voltageb_t">
+              <PropertyRef Name="se_id_volt" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_led2_td">
+              <PropertyRef Name="se_id_volt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_td" Type="Self.siixsem_VoltsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_td_siixsem_voltageb_t">
+          <End Role="siixsem_voltageb_t" Type="Self.siixsem_voltageb_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_td" Type="Self.siixsem_VoltsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_voltageb_t">
+              <PropertyRef Name="se_id_volt" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_td">
+              <PropertyRef Name="se_id_volt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="existModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getAllModels" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getColorDescById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idColor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getColorsByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getColorsLed2ByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getFluxDescByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFlx" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getFluxesByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getFluxesLed2ByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getFluxLabelByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFlx" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getLaserMarks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getLDMSpec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelColor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idColor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelColorB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idColor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelColorP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idColor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelPanel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelPanelSpec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModelSpecF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getNameCogiscan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getNumSidesByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getPrinterById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getPrinters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getPrintrById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idP" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getSidesByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getStep" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getVoltDescById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idVolt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getVoltsByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getVoltsLed2ByIdModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="hasCoverFrame" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="hasFourLbls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="hasFourSides" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="hasLDM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="hasPanel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertFluxModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idFlux" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="descr" Type="nvarchar" Mode="In" />
+          <Parameter Name="idProject" Type="int" Mode="In" />
+          <Parameter Name="isSpecial" Type="int" Mode="In" />
+          <Parameter Name="isValid" Type="int" Mode="In" />
+          <Parameter Name="isSC" Type="int" Mode="In" />
+          <Parameter Name="has2L" Type="int" Mode="In" />
+          <Parameter Name="isDFC" Type="int" Mode="In" />
+          <Parameter Name="isML" Type="int" Mode="In" />
+          <Parameter Name="hasPanel" Type="int" Mode="In" />
+          <Parameter Name="isLDM" Type="int" Mode="In" />
+          <Parameter Name="numPCB" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertSideModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idSide" Type="int" Mode="In" />
+          <Parameter Name="search" Type="nvarchar" Mode="In" />
+          <Parameter Name="lblTag" Type="nvarchar" Mode="In" />
+          <Parameter Name="oracle" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="isDFCIFC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="isPrinting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPrinter" Type="int" Mode="In" />
+        </Function>
+        <Function Name="isSerialContinuos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="isWabcoModel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="setIsPrinting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="value" Type="int" Mode="In" />
+          <Parameter Name="idPrinter" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updatePartNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idModel" Type="int" Mode="In" />
+          <Parameter Name="idSide" Type="int" Mode="In" />
+          <Parameter Name="partNum" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="validate_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+          <Parameter Name="pass" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="siixsem_main_dbModelStoreContainer">
+          <EntitySet Name="siixsem_colorb_t" EntityType="Self.siixsem_colorb_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_colorsb_led2_td" EntityType="Self.siixsem_colorsb_led2_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_colorsb_td" EntityType="Self.siixsem_colorsb_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_families_t" EntityType="Self.siixsem_families_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_flxb_t" EntityType="Self.siixsem_flxb_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_flxsModel_led2_td" EntityType="Self.siixsem_flxsModel_led2_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_flxsModel_td" EntityType="Self.siixsem_flxsModel_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_lblTagColor_t" EntityType="Self.siixsem_lblTagColor_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_ldmModels_td" EntityType="Self.siixsem_ldmModels_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_models_t" EntityType="Self.siixsem_models_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_modFourLbls_td" EntityType="Self.siixsem_modFourLbls_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_printers_t" EntityType="Self.siixsem_printers_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_sides_t" EntityType="Self.siixsem_sides_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_sidesModel_td" EntityType="Self.siixsem_sidesModel_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_user_role_t" EntityType="Self.siixsem_user_role_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_users_t" EntityType="Self.siixsem_users_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_voltageb_t" EntityType="Self.siixsem_voltageb_t" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_VoltsModel_led2_td" EntityType="Self.siixsem_VoltsModel_led2_td" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siixsem_VoltsModel_td" EntityType="Self.siixsem_VoltsModel_td" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_colorb_t" Association="Self.FK_siixsem_colorsb_led2_td_siixsem_colorb_t">
+            <End Role="siixsem_colorb_t" EntitySet="siixsem_colorb_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t" Association="Self.FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t">
+            <End Role="siixsem_lblTagColor_t" EntitySet="siixsem_lblTagColor_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_models_t" Association="Self.FK_siixsem_colorsb_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_colorb_t" Association="Self.FK_siixsem_colorsb_td_siixsem_colorb_t">
+            <End Role="siixsem_colorb_t" EntitySet="siixsem_colorb_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_lblTagColor_t" Association="Self.FK_siixsem_colorsb_td_siixsem_lblTagColor_t">
+            <End Role="siixsem_lblTagColor_t" EntitySet="siixsem_lblTagColor_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_models_t" Association="Self.FK_siixsem_colorsb_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_led2_td_siixsem_flxb_t" Association="Self.FK_siixsem_flxsModel_led2_td_siixsem_flxb_t">
+            <End Role="siixsem_flxb_t" EntitySet="siixsem_flxb_t" />
+            <End Role="siixsem_flxsModel_led2_td" EntitySet="siixsem_flxsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_led2_td_siixsem_models_t" Association="Self.FK_siixsem_flxsModel_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_flxsModel_led2_td" EntitySet="siixsem_flxsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_td_siixsem_flxb_t" Association="Self.FK_siixsem_flxsModel_td_siixsem_flxb_t">
+            <End Role="siixsem_flxb_t" EntitySet="siixsem_flxb_t" />
+            <End Role="siixsem_flxsModel_td" EntitySet="siixsem_flxsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_td_siixsem_models_t" Association="Self.FK_siixsem_flxsModel_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_flxsModel_td" EntitySet="siixsem_flxsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_ldmModels_td_siixsem_models_t" Association="Self.FK_siixsem_ldmModels_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_ldmModels_td" EntitySet="siixsem_ldmModels_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_ldmModels_td_siixsem_models_t1" Association="Self.FK_siixsem_ldmModels_td_siixsem_models_t1">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_ldmModels_td" EntitySet="siixsem_ldmModels_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_models_t_siixsem_families_t" Association="Self.FK_siixsem_models_t_siixsem_families_t">
+            <End Role="siixsem_families_t" EntitySet="siixsem_families_t" />
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_modFourLbls_td_siixsem_models_t" Association="Self.FK_siixsem_modFourLbls_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_modFourLbls_td" EntitySet="siixsem_modFourLbls_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_modFourLbls_td_siixsem_models_t1" Association="Self.FK_siixsem_modFourLbls_td_siixsem_models_t1">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_modFourLbls_td" EntitySet="siixsem_modFourLbls_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_sidesModels_td_siixsem_models_t" Association="Self.FK_siixsem_sidesModels_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_sidesModel_td" EntitySet="siixsem_sidesModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_sidesModels_td_siixsem_sides_t" Association="Self.FK_siixsem_sidesModels_td_siixsem_sides_t">
+            <End Role="siixsem_sides_t" EntitySet="siixsem_sides_t" />
+            <End Role="siixsem_sidesModel_td" EntitySet="siixsem_sidesModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_users_t_siixsem_user_role_t" Association="Self.FK_siixsem_users_t_siixsem_user_role_t">
+            <End Role="siixsem_user_role_t" EntitySet="siixsem_user_role_t" />
+            <End Role="siixsem_users_t" EntitySet="siixsem_users_t" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_led2_td_siixsem_models_t" Association="Self.FK_siixsem_VoltsModel_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_VoltsModel_led2_td" EntitySet="siixsem_VoltsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t" Association="Self.FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t">
+            <End Role="siixsem_voltageb_t" EntitySet="siixsem_voltageb_t" />
+            <End Role="siixsem_VoltsModel_led2_td" EntitySet="siixsem_VoltsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_td_siixsem_models_t" Association="Self.FK_siixsem_VoltsModel_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_VoltsModel_td" EntitySet="siixsem_VoltsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_td_siixsem_voltageb_t" Association="Self.FK_siixsem_VoltsModel_td_siixsem_voltageb_t">
+            <End Role="siixsem_voltageb_t" EntitySet="siixsem_voltageb_t" />
+            <End Role="siixsem_VoltsModel_td" EntitySet="siixsem_VoltsModel_td" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="siixsem_main_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="siixsem_families_t">
+          <Key>
+            <PropertyRef Name="se_id_family" />
+          </Key>
+          <Property Name="se_id_family" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_car_model" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="Self.FK_siixsem_models_t_siixsem_families_t" FromRole="siixsem_families_t" ToRole="siixsem_models_t" />
+        </EntityType>
+        <EntityType Name="siixsem_flxb_t">
+          <Key>
+            <PropertyRef Name="se_id_fb" />
+          </Key>
+          <Property Name="se_id_fb" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_flx_lbl" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siixsem_flxsModel_td" Relationship="Self.FK_siixsem_flxsModel_td_siixsem_flxb_t" FromRole="siixsem_flxb_t" ToRole="siixsem_flxsModel_td" />
+          <NavigationProperty Name="siixsem_flxsModel_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_flxb_t" FromRole="siixsem_flxb_t" ToRole="siixsem_flxsModel_led2_td" />
+        </EntityType>
+        <EntityType Name="siixsem_flxsModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_flx" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_flxb_t" Relationship="Self.FK_siixsem_flxsModel_td_siixsem_flxb_t" FromRole="siixsem_flxsModel_td" ToRole="siixsem_flxb_t" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="Self.FK_siixsem_flxsModel_td_siixsem_models_t" FromRole="siixsem_flxsModel_td" ToRole="siixsem_models_t" />
+        </EntityType>
+        <EntityType Name="siixsem_models_t">
+          <Key>
+            <PropertyRef Name="se_id_model" />
+          </Key>
+          <Property Name="se_id_model" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_id_family" Type="Int32" Nullable="false" />
+          <Property Name="se_is_special" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_families_t" Relationship="Self.FK_siixsem_models_t_siixsem_families_t" FromRole="siixsem_models_t" ToRole="siixsem_families_t" />
+          <NavigationProperty Name="siixsem_flxsModel_td" Relationship="Self.FK_siixsem_flxsModel_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_flxsModel_td" />
+          <NavigationProperty Name="siixsem_sidesModel_td" Relationship="Self.FK_siixsem_sidesModels_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_sidesModel_td" />
+          <NavigationProperty Name="siixsem_VoltsModel_td" Relationship="Self.FK_siixsem_VoltsModel_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_VoltsModel_td" />
+          <NavigationProperty Name="siixsem_colorsb_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_colorsb_td" />
+          <Property Name="se_valid" Type="Int32" Nullable="false" />
+          <Property Name="se_serial_continuos" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_ldmModels_td" Relationship="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_ldmModels_td" />
+          <NavigationProperty Name="siixsem_ldmModels_td1" Relationship="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t1" FromRole="siixsem_models_t" ToRole="siixsem_ldmModels_td" />
+          <NavigationProperty Name="siixsem_modFourLbls_td" Relationship="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_modFourLbls_td" />
+          <NavigationProperty Name="siixsem_modFourLbls_td1" Relationship="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t1" FromRole="siixsem_models_t" ToRole="siixsem_modFourLbls_td" />
+          <Property Name="se_two_led" Type="Int32" Nullable="false" />
+          <Property Name="se_dfc_ifc" Type="Int32" Nullable="false" />
+          <Property Name="se_four_sides" Type="Int32" Nullable="false" />
+          <Property Name="se_cover_frame" Type="Int32" Nullable="false" />
+          <Property Name="se_num_pcb" Type="Single" Nullable="false" />
+          <Property Name="se_laser_mark" Type="Int32" Nullable="false" />
+          <Property Name="se_has_panelLbl" Type="Int32" Nullable="false" />
+          <Property Name="se_is_ldm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_colorsb_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_colorsb_led2_td" />
+          <NavigationProperty Name="siixsem_flxsModel_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_flxsModel_led2_td" />
+          <NavigationProperty Name="siixsem_VoltsModel_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_models_t" FromRole="siixsem_models_t" ToRole="siixsem_VoltsModel_led2_td" />
+          <Property Name="se_one_step" Type="Int32" Nullable="false" />
+          <Property Name="se_two_step" Type="Int32" Nullable="false" />
+          <Property Name="se_three_step" Type="Int32" Nullable="false" />
+          <Property Name="se_xml" Type="Int32" Nullable="false" />
+          <Property Name="se_is_pallet" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siixsem_sides_t">
+          <Key>
+            <PropertyRef Name="se_id_side" />
+          </Key>
+          <Property Name="se_id_side" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siixsem_sidesModel_td" Relationship="Self.FK_siixsem_sidesModels_td_siixsem_sides_t" FromRole="siixsem_sides_t" ToRole="siixsem_sidesModel_td" />
+        </EntityType>
+        <EntityType Name="siixsem_sidesModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_side" Type="Int32" Nullable="false" />
+          <Property Name="se_part_num_tr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_int_part_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="se_cust_part_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="Self.FK_siixsem_sidesModels_td_siixsem_models_t" FromRole="siixsem_sidesModel_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_sides_t" Relationship="Self.FK_siixsem_sidesModels_td_siixsem_sides_t" FromRole="siixsem_sidesModel_td" ToRole="siixsem_sides_t" />
+          <Property Name="se_oracle_par_num" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="se_assembly_name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="siixsem_user_role_t">
+          <Key>
+            <PropertyRef Name="se_id_rol" />
+          </Key>
+          <Property Name="se_id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_descr_permissions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_level" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_users_t" Relationship="Self.FK_siixsem_users_t_siixsem_user_role_t" FromRole="siixsem_user_role_t" ToRole="siixsem_users_t" />
+        </EntityType>
+        <EntityType Name="siixsem_users_t">
+          <Key>
+            <PropertyRef Name="se_id_user" />
+          </Key>
+          <Property Name="se_id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_pass" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_id_rol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_user_role_t" Relationship="Self.FK_siixsem_users_t_siixsem_user_role_t" FromRole="siixsem_users_t" ToRole="siixsem_user_role_t" />
+        </EntityType>
+        <EntityType Name="siixsem_voltageb_t">
+          <Key>
+            <PropertyRef Name="se_id_volt" />
+          </Key>
+          <Property Name="se_id_volt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="se_volt_lbl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siixsem_VoltsModel_td" Relationship="Self.FK_siixsem_VoltsModel_td_siixsem_voltageb_t" FromRole="siixsem_voltageb_t" ToRole="siixsem_VoltsModel_td" />
+          <NavigationProperty Name="siixsem_VoltsModel_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t" FromRole="siixsem_voltageb_t" ToRole="siixsem_VoltsModel_led2_td" />
+        </EntityType>
+        <EntityType Name="siixsem_VoltsModel_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_volt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="Self.FK_siixsem_VoltsModel_td_siixsem_models_t" FromRole="siixsem_VoltsModel_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_voltageb_t" Relationship="Self.FK_siixsem_VoltsModel_td_siixsem_voltageb_t" FromRole="siixsem_VoltsModel_td" ToRole="siixsem_voltageb_t" />
+        </EntityType>
+        <Association Name="FK_siixsem_models_t_siixsem_families_t">
+          <End Role="siixsem_families_t" Type="Self.siixsem_families_t" Multiplicity="1" />
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_families_t">
+              <PropertyRef Name="se_id_family" />
+            </Principal>
+            <Dependent Role="siixsem_models_t">
+              <PropertyRef Name="se_id_family" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_td_siixsem_flxb_t">
+          <End Role="siixsem_flxb_t" Type="Self.siixsem_flxb_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_td" Type="Self.siixsem_flxsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_flxb_t">
+              <PropertyRef Name="se_id_fb" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_td">
+              <PropertyRef Name="se_id_flx" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_flxsModel_td" Type="Self.siixsem_flxsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_sidesModels_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_sidesModel_td" Type="Self.siixsem_sidesModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_sidesModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_td_siixsem_models_t">
+          <End Role="siixsem_models_t" Type="Self.siixsem_models_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_td" Type="Self.siixsem_VoltsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_sidesModels_td_siixsem_sides_t">
+          <End Role="siixsem_sides_t" Type="Self.siixsem_sides_t" Multiplicity="1" />
+          <End Role="siixsem_sidesModel_td" Type="Self.siixsem_sidesModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_sides_t">
+              <PropertyRef Name="se_id_side" />
+            </Principal>
+            <Dependent Role="siixsem_sidesModel_td">
+              <PropertyRef Name="se_id_side" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_users_t_siixsem_user_role_t">
+          <End Role="siixsem_user_role_t" Type="Self.siixsem_user_role_t" Multiplicity="1" />
+          <End Role="siixsem_users_t" Type="Self.siixsem_users_t" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_user_role_t">
+              <PropertyRef Name="se_id_rol" />
+            </Principal>
+            <Dependent Role="siixsem_users_t">
+              <PropertyRef Name="se_id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_td_siixsem_voltageb_t">
+          <End Role="siixsem_voltageb_t" Type="Self.siixsem_voltageb_t" Multiplicity="1" />
+          <End Role="siixsem_VoltsModel_td" Type="Self.siixsem_VoltsModel_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_voltageb_t">
+              <PropertyRef Name="se_id_volt" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_td">
+              <PropertyRef Name="se_id_volt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="siixsem_main_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="siixsem_families_t" EntityType="Self.siixsem_families_t" />
+          <EntitySet Name="siixsem_flxb_t" EntityType="Self.siixsem_flxb_t" />
+          <EntitySet Name="siixsem_flxsModel_td" EntityType="Self.siixsem_flxsModel_td" />
+          <EntitySet Name="siixsem_models_t" EntityType="Self.siixsem_models_t" />
+          <EntitySet Name="siixsem_sides_t" EntityType="Self.siixsem_sides_t" />
+          <EntitySet Name="siixsem_sidesModel_td" EntityType="Self.siixsem_sidesModel_td" />
+          <EntitySet Name="siixsem_user_role_t" EntityType="Self.siixsem_user_role_t" />
+          <EntitySet Name="siixsem_users_t" EntityType="Self.siixsem_users_t" />
+          <EntitySet Name="siixsem_voltageb_t" EntityType="Self.siixsem_voltageb_t" />
+          <EntitySet Name="siixsem_VoltsModel_td" EntityType="Self.siixsem_VoltsModel_td" />
+          <AssociationSet Name="FK_siixsem_models_t_siixsem_families_t" Association="Self.FK_siixsem_models_t_siixsem_families_t">
+            <End Role="siixsem_families_t" EntitySet="siixsem_families_t" />
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_td_siixsem_flxb_t" Association="Self.FK_siixsem_flxsModel_td_siixsem_flxb_t">
+            <End Role="siixsem_flxb_t" EntitySet="siixsem_flxb_t" />
+            <End Role="siixsem_flxsModel_td" EntitySet="siixsem_flxsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_td_siixsem_models_t" Association="Self.FK_siixsem_flxsModel_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_flxsModel_td" EntitySet="siixsem_flxsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_sidesModels_td_siixsem_models_t" Association="Self.FK_siixsem_sidesModels_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_sidesModel_td" EntitySet="siixsem_sidesModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_td_siixsem_models_t" Association="Self.FK_siixsem_VoltsModel_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_VoltsModel_td" EntitySet="siixsem_VoltsModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_sidesModels_td_siixsem_sides_t" Association="Self.FK_siixsem_sidesModels_td_siixsem_sides_t">
+            <End Role="siixsem_sides_t" EntitySet="siixsem_sides_t" />
+            <End Role="siixsem_sidesModel_td" EntitySet="siixsem_sidesModel_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_users_t_siixsem_user_role_t" Association="Self.FK_siixsem_users_t_siixsem_user_role_t">
+            <End Role="siixsem_user_role_t" EntitySet="siixsem_user_role_t" />
+            <End Role="siixsem_users_t" EntitySet="siixsem_users_t" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_td_siixsem_voltageb_t" Association="Self.FK_siixsem_VoltsModel_td_siixsem_voltageb_t">
+            <End Role="siixsem_voltageb_t" EntitySet="siixsem_voltageb_t" />
+            <End Role="siixsem_VoltsModel_td" EntitySet="siixsem_VoltsModel_td" />
+          </AssociationSet>
+          <FunctionImport Name="existModel" ReturnType="Collection(Int32)">
+          <Parameter Name="model" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getAllModels" ReturnType="Collection(siixsem_main_dbModel.getAllModels_Result)" />
+          <FunctionImport Name="getFluxesByIdModel" ReturnType="Collection(siixsem_main_dbModel.getFluxesByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getNumSidesByIdModel" ReturnType="Collection(siixsem_main_dbModel.getNumSidesByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getSidesByIdModel" ReturnType="Collection(siixsem_main_dbModel.getSidesByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getVoltsByIdModel" ReturnType="Collection(siixsem_main_dbModel.getVoltsByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="validate_user" ReturnType="Collection(siixsem_main_dbModel.validate_user_Result)">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updatePartNumber" ReturnType="Collection(siixsem_main_dbModel.updatePartNumber_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idSide" Mode="In" Type="Int32" />
+            <Parameter Name="partNum" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="siixsem_colorsb_td" EntityType="siixsem_main_dbModel.siixsem_colorsb_td" />
+          <EntitySet Name="siixsem_lblTagColor_t" EntityType="siixsem_main_dbModel.siixsem_lblTagColor_t" />
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_lblTagColor_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_lblTagColor_t">
+            <End Role="siixsem_lblTagColor_t" EntitySet="siixsem_lblTagColor_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <EntitySet Name="siixsem_colorb_t" EntityType="siixsem_main_dbModel.siixsem_colorb_t" />
+          <AssociationSet Name="FK_siixsem_colorsb_td_siixsem_colorb_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_colorb_t">
+            <End Role="siixsem_colorb_t" EntitySet="siixsem_colorb_t" />
+            <End Role="siixsem_colorsb_td" EntitySet="siixsem_colorsb_td" />
+          </AssociationSet>
+          <FunctionImport Name="getColorsByIdModel" ReturnType="Collection(siixsem_main_dbModel.getColorsByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="isSerialContinuos" ReturnType="Collection(siixsem_main_dbModel.isSerialContinuos_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getFluxLabelByID" ReturnType="Collection(siixsem_main_dbModel.getFluxLabelByID_Result)">
+          <Parameter Name="idFlx" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getFluxDescByID" ReturnType="Collection(siixsem_main_dbModel.getFluxDescByID_Result)">
+          <Parameter Name="idFlx" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getColorDescById" ReturnType="Collection(siixsem_main_dbModel.getColorDescById_Result)">
+          <Parameter Name="idColor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getVoltDescById" ReturnType="Collection(siixsem_main_dbModel.getVoltDescById_Result)">
+          <Parameter Name="idVolt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="siixsem_ldmModels_td" EntityType="siixsem_main_dbModel.siixsem_ldmModels_td" />
+          <AssociationSet Name="FK_siixsem_ldmModels_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_ldmModels_td" EntitySet="siixsem_ldmModels_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_ldmModels_td_siixsem_models_t1" Association="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t1">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_ldmModels_td" EntitySet="siixsem_ldmModels_td" />
+          </AssociationSet>
+          <FunctionImport Name="getPrinters" ReturnType="Collection(siixsem_main_dbModel.getPrinters_Result)" />
+          <FunctionImport Name="hasLDM" ReturnType="Collection(siixsem_main_dbModel.hasLDM_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getPrintrById" ReturnType="Collection(siixsem_main_dbModel.getPrintrById_Result)">
+          <Parameter Name="idP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="siixsem_printers_t" EntityType="siixsem_main_dbModel.siixsem_printers_t" />
+          <FunctionImport Name="isPrinting" ReturnType="Collection(siixsem_main_dbModel.isPrinting_Result)">
+          <Parameter Name="idPrinter" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="setIsPrinting">
+            <Parameter Name="value" Mode="In" Type="Int32" />
+            <Parameter Name="idPrinter" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="siixsem_modFourLbls_td" EntityType="siixsem_main_dbModel.siixsem_modFourLbls_td" />
+          <AssociationSet Name="FK_siixsem_modFourLbls_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_modFourLbls_td" EntitySet="siixsem_modFourLbls_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_modFourLbls_td_siixsem_models_t1" Association="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t1">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_modFourLbls_td" EntitySet="siixsem_modFourLbls_td" />
+          </AssociationSet>
+          <FunctionImport Name="getLDMSpec" ReturnType="Collection(siixsem_main_dbModel.getLDMSpec_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="hasFourLbls" ReturnType="Collection(siixsem_main_dbModel.hasFourLbls_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelSpecF" ReturnType="Collection(siixsem_main_dbModel.getModelSpecF_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelColor" ReturnType="Collection(siixsem_main_dbModel.getModelColor_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idColor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelColorB" ReturnType="Collection(siixsem_main_dbModel.getModelColorB_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idColor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getColorsLed2ByIdModel" ReturnType="Collection(siixsem_main_dbModel.getColorsLed2ByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getFluxesLed2ByIdModel" ReturnType="Collection(siixsem_main_dbModel.getFluxesLed2ByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getVoltsLed2ByIdModel" ReturnType="Collection(siixsem_main_dbModel.getVoltsLed2ByIdModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="hasCoverFrame" ReturnType="Collection(siixsem_main_dbModel.hasCoverFrame_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="hasFourSides" ReturnType="Collection(siixsem_main_dbModel.hasFourSides_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="isDFCIFC" ReturnType="Collection(siixsem_main_dbModel.isDFCIFC_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelPanel" ReturnType="Collection(siixsem_main_dbModel.getModelPanel_Result)">
+          <Parameter Name="IdModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getPrinterById" ReturnType="Collection(siixsem_main_dbModel.getPrinterById_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelPanelSpec" ReturnType="Collection(siixsem_main_dbModel.getModelPanelSpec_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="hasPanel" ReturnType="Collection(siixsem_main_dbModel.hasPanel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelColorP" ReturnType="Collection(siixsem_main_dbModel.getModelColorP_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idColor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getModelByID" ReturnType="Collection(siixsem_main_dbModel.getModelByID_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="siixsem_colorsb_led2_td" EntityType="siixsem_main_dbModel.siixsem_colorsb_led2_td" />
+          <EntitySet Name="siixsem_flxsModel_led2_td" EntityType="siixsem_main_dbModel.siixsem_flxsModel_led2_td" />
+          <EntitySet Name="siixsem_VoltsModel_led2_td" EntityType="siixsem_main_dbModel.siixsem_VoltsModel_led2_td" />
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_colorb_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_colorb_t">
+            <End Role="siixsem_colorb_t" EntitySet="siixsem_colorb_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t">
+            <End Role="siixsem_lblTagColor_t" EntitySet="siixsem_lblTagColor_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_colorsb_led2_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_colorsb_led2_td" EntitySet="siixsem_colorsb_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_led2_td_siixsem_flxb_t" Association="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_flxb_t">
+            <End Role="siixsem_flxb_t" EntitySet="siixsem_flxb_t" />
+            <End Role="siixsem_flxsModel_led2_td" EntitySet="siixsem_flxsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_flxsModel_led2_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_flxsModel_led2_td" EntitySet="siixsem_flxsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_led2_td_siixsem_models_t" Association="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_models_t">
+            <End Role="siixsem_models_t" EntitySet="siixsem_models_t" />
+            <End Role="siixsem_VoltsModel_led2_td" EntitySet="siixsem_VoltsModel_led2_td" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t" Association="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t">
+            <End Role="siixsem_voltageb_t" EntitySet="siixsem_voltageb_t" />
+            <End Role="siixsem_VoltsModel_led2_td" EntitySet="siixsem_VoltsModel_led2_td" />
+          </AssociationSet>
+          <FunctionImport Name="insertModel" ReturnType="Collection(siixsem_main_dbModel.insertModel_Result)">
+            <Parameter Name="descr" Mode="In" Type="String" />
+            <Parameter Name="idProject" Mode="In" Type="Int32" />
+            <Parameter Name="isSpecial" Mode="In" Type="Int32" />
+            <Parameter Name="isValid" Mode="In" Type="Int32" />
+            <Parameter Name="isSC" Mode="In" Type="Int32" />
+            <Parameter Name="has2L" Mode="In" Type="Int32" />
+            <Parameter Name="isDFC" Mode="In" Type="Int32" />
+            <Parameter Name="isML" Mode="In" Type="Int32" />
+            <Parameter Name="hasPanel" Mode="In" Type="Int32" />
+            <Parameter Name="isLDM" Mode="In" Type="Int32" />
+            <Parameter Name="numPCB" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertSideModel" ReturnType="Collection(siixsem_main_dbModel.insertSideModel_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idSide" Mode="In" Type="Int32" />
+            <Parameter Name="search" Mode="In" Type="String" />
+            <Parameter Name="lblTag" Mode="In" Type="String" />
+            <Parameter Name="oracle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertFluxModel" ReturnType="Collection(siixsem_main_dbModel.insertFluxModel_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+            <Parameter Name="idFlux" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getStep" ReturnType="Collection(siixsem_main_dbModel.getStep_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="isWabcoModel" ReturnType="Collection(siixsem_main_dbModel.isWabcoModel_Result)">
+          <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getLaserMarks" ReturnType="Collection(siixsem_main_dbModel.getLaserMarks_Result)" />
+          <FunctionImport Name="getNameCogiscan" ReturnType="Collection(siixsem_main_dbModel.getNameCogiscan_Result)">
+            <Parameter Name="idModel" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getAllModels_Result">
+          <Property Type="Int32" Name="se_id_model" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="se_id_family" Nullable="false" />
+          <Property Type="Int32" Name="num_sides" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getFluxesByIdModel_Result">
+          <Property Type="Int32" Name="se_id_detail" Nullable="false" />
+          <Property Type="Int32" Name="se_id_flx" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_flx_lbl" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="getSidesByIdModel_Result">
+          <Property Type="Int32" Name="se_id_detail" Nullable="false" />
+          <Property Type="Int32" Name="se_id_side" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="getVoltsByIdModel_Result">
+          <Property Type="Int32" Name="se_id_detail" Nullable="false" />
+          <Property Type="Int32" Name="se_id_volt" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_volt_lbl" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="validate_user_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="descr" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="desc_permissions" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="se_id_user" Nullable="false" />
+          <Property Type="String" Name="se_name" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="se_level" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="updatePartNumber_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getNumSidesByIdModel_Result">
+          <Property Type="Int32" Name="numSides" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="siixsem_colorsb_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_colorb" Type="Int32" Nullable="false" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_lblTag" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_lblTagColor_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_lblTagColor_t" FromRole="siixsem_colorsb_td" ToRole="siixsem_lblTagColor_t" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_models_t" FromRole="siixsem_colorsb_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_colorb_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_colorb_t" FromRole="siixsem_colorsb_td" ToRole="siixsem_colorb_t" />
+        </EntityType>
+        <EntityType Name="siixsem_lblTagColor_t">
+          <Key>
+            <PropertyRef Name="se_id_lblTag" />
+          </Key>
+          <Property Name="se_id_lblTag" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_lblTag" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="siixsem_colorsb_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_lblTagColor_t" FromRole="siixsem_lblTagColor_t" ToRole="siixsem_colorsb_td" />
+          <NavigationProperty Name="siixsem_colorsb_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t" FromRole="siixsem_lblTagColor_t" ToRole="siixsem_colorsb_led2_td" />
+        </EntityType>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_lblTagColor_t">
+          <End Type="siixsem_main_dbModel.siixsem_lblTagColor_t" Role="siixsem_lblTagColor_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_td" Role="siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_lblTagColor_t">
+              <PropertyRef Name="se_id_lblTag" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_lblTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_td" Role="siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="siixsem_colorb_t">
+          <Key>
+            <PropertyRef Name="se_id_cb" />
+          </Key>
+          <Property Name="se_id_cb" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="siixsem_colorsb_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_td_siixsem_colorb_t" FromRole="siixsem_colorb_t" ToRole="siixsem_colorsb_td" />
+          <NavigationProperty Name="siixsem_colorsb_led2_td" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_colorb_t" FromRole="siixsem_colorb_t" ToRole="siixsem_colorsb_led2_td" />
+        </EntityType>
+        <Association Name="FK_siixsem_colorsb_td_siixsem_colorb_t">
+          <End Type="siixsem_main_dbModel.siixsem_colorb_t" Role="siixsem_colorb_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_td" Role="siixsem_colorsb_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_colorb_t">
+              <PropertyRef Name="se_id_cb" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_td">
+              <PropertyRef Name="se_id_colorb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="getColorsByIdModel_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+          <Property Type="Int32" Name="se_id_colorb" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_lblTag" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="isSerialContinuos_Result">
+          <Property Type="Int32" Name="isContinuos" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getFluxLabelByID_Result">
+          <Property Type="String" Name="se_flx_lbl" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="getFluxDescByID_Result">
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="getColorDescById_Result">
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="getVoltDescById_Result">
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="siixsem_ldmModels_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model_led" Type="Int32" Nullable="false" />
+          <Property Name="se_id_model_ldm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t" FromRole="siixsem_ldmModels_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_models_t1" Relationship="siixsem_main_dbModel.FK_siixsem_ldmModels_td_siixsem_models_t1" FromRole="siixsem_ldmModels_td" ToRole="siixsem_models_t" />
+        </EntityType>
+        <Association Name="FK_siixsem_ldmModels_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_ldmModels_td" Role="siixsem_ldmModels_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_ldmModels_td">
+              <PropertyRef Name="se_id_model_led" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_ldmModels_td_siixsem_models_t1">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_ldmModels_td" Role="siixsem_ldmModels_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_ldmModels_td">
+              <PropertyRef Name="se_id_model_ldm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="getPrinters_Result">
+          <Property Type="Int32" Name="se_id_printer" Nullable="false" />
+          <Property Type="String" Name="se_code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_ip" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getPrintrById_Result">
+          <Property Type="Int32" Name="se_id_printer" Nullable="false" />
+          <Property Type="String" Name="se_code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_ip" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="siixsem_printers_t">
+          <Key>
+            <PropertyRef Name="se_id_printer" />
+          </Key>
+          <Property Name="se_id_printer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="se_description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="se_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="se_is_printing" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="isPrinting_Result">
+          <Property Type="Int32" Name="se_is_printing" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="hasLDM_Result">
+          <Property Type="Int32" Name="id_ldm" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="siixsem_modFourLbls_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model_a" Type="Int32" Nullable="false" />
+          <Property Name="se_id_model_b" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t" FromRole="siixsem_modFourLbls_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_models_t1" Relationship="siixsem_main_dbModel.FK_siixsem_modFourLbls_td_siixsem_models_t1" FromRole="siixsem_modFourLbls_td" ToRole="siixsem_models_t" />
+        </EntityType>
+        <Association Name="FK_siixsem_modFourLbls_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_modFourLbls_td" Role="siixsem_modFourLbls_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_modFourLbls_td">
+              <PropertyRef Name="se_id_model_a" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_modFourLbls_td_siixsem_models_t1">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_modFourLbls_td" Role="siixsem_modFourLbls_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_modFourLbls_td">
+              <PropertyRef Name="se_id_model_b" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="getLDMSpec_Result">
+          <Property Type="Int32" Name="idModel" Nullable="false" />
+          <Property Type="Int32" Name="idSide" Nullable="false" />
+          <Property Type="String" Name="descr" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="idFlx" Nullable="false" />
+          <Property Type="Int32" Name="idCol" Nullable="false" />
+          <Property Type="Int32" Name="idVol" Nullable="false" />
+          <Property Type="Int32" Name="idRev" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="hasFourLbls_Result">
+          <Property Type="Int32" Name="id_mB" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelSpecF_Result">
+          <Property Type="Int32" Name="idModel" Nullable="false" />
+          <Property Type="Int32" Name="idSide" Nullable="false" />
+          <Property Type="Int32" Name="idRev" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelColor_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+          <Property Type="Int32" Name="se_id_colorb" Nullable="false" />
+          <Property Type="Int32" Name="se_id_model" Nullable="false" />
+          <Property Type="Int32" Name="se_id_lblTag" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelColorB_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getColorsLed2ByIdModel_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+          <Property Type="Int32" Name="se_id_colorb" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="getFluxesLed2ByIdModel_Result">
+          <Property Type="Int32" Name="se_id_detail" Nullable="false" />
+          <Property Type="Int32" Name="se_id_flx" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="getVoltsLed2ByIdModel_Result">
+          <Property Type="Int32" Name="se_id_detail" Nullable="false" />
+          <Property Type="Int32" Name="se_id_volt" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="isDFCIFC_Result">
+          <Property Type="Int32" Name="se_dfc_ifc" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="hasFourSides_Result">
+          <Property Type="Int32" Name="se_four_sides" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="hasCoverFrame_Result">
+          <Property Type="Int32" Name="se_cover_frame" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelPanel_Result">
+          <Property Type="Single" Name="se_num_pcb" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getPrinterById_Result">
+          <Property Type="Int32" Name="se_id_printer" Nullable="false" />
+          <Property Type="String" Name="se_code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_ip" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="se_is_printing" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelPanelSpec_Result">
+          <Property Type="Int32" Name="idModel" Nullable="false" />
+          <Property Type="Int32" Name="idSide" Nullable="false" />
+          <Property Type="Int32" Name="idRev" Nullable="false" />
+          <Property Type="Single" Name="numPCB" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="hasPanel_Result">
+          <Property Type="Int32" Name="id_mB" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelColorP_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getModelByID_Result">
+          <Property Type="Int32" Name="se_id_model" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="se_id_family" Nullable="false" />
+          <Property Type="Int32" Name="se_is_special" Nullable="false" />
+          <Property Type="Int32" Name="se_valid" Nullable="false" />
+          <Property Type="Int32" Name="se_serial_continuos" Nullable="false" />
+          <Property Type="Int32" Name="se_two_led" Nullable="false" />
+          <Property Type="Int32" Name="se_dfc_ifc" Nullable="false" />
+          <Property Type="Int32" Name="se_four_sides" Nullable="false" />
+          <Property Type="Int32" Name="se_cover_frame" Nullable="false" />
+          <Property Type="Single" Name="se_num_pcb" Nullable="false" />
+          <Property Type="Int32" Name="se_laser_mark" Nullable="false" />
+          <Property Type="Int32" Name="se_has_panelLbl" Nullable="false" />
+          <Property Type="Int32" Name="se_is_ldm" Nullable="false" />
+          <Property Type="Int32" Name="se_one_step" Nullable="false" />
+          <Property Type="Int32" Name="se_two_step" Nullable="false" />
+          <Property Type="Int32" Name="se_three_step" Nullable="false" />
+          <Property Type="Int32" Name="se_xml" Nullable="false" />
+          <Property Type="Int32" Name="se_is_pallet" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="siixsem_colorsb_led2_td">
+          <Key>
+            <PropertyRef Name="se_id" />
+          </Key>
+          <Property Name="se_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_colorb" Type="Int32" Nullable="false" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_lblTag" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_colorb_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_colorb_t" FromRole="siixsem_colorsb_led2_td" ToRole="siixsem_colorb_t" />
+          <NavigationProperty Name="siixsem_lblTagColor_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t" FromRole="siixsem_colorsb_led2_td" ToRole="siixsem_lblTagColor_t" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_colorsb_led2_td_siixsem_models_t" FromRole="siixsem_colorsb_led2_td" ToRole="siixsem_models_t" />
+        </EntityType>
+        <EntityType Name="siixsem_flxsModel_led2_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_flx" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_flxb_t" Relationship="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_flxb_t" FromRole="siixsem_flxsModel_led2_td" ToRole="siixsem_flxb_t" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_flxsModel_led2_td_siixsem_models_t" FromRole="siixsem_flxsModel_led2_td" ToRole="siixsem_models_t" />
+        </EntityType>
+        <EntityType Name="siixsem_VoltsModel_led2_td">
+          <Key>
+            <PropertyRef Name="se_id_detail" />
+          </Key>
+          <Property Name="se_id_detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="se_id_model" Type="Int32" Nullable="false" />
+          <Property Name="se_id_volt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="siixsem_models_t" Relationship="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_models_t" FromRole="siixsem_VoltsModel_led2_td" ToRole="siixsem_models_t" />
+          <NavigationProperty Name="siixsem_voltageb_t" Relationship="siixsem_main_dbModel.FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t" FromRole="siixsem_VoltsModel_led2_td" ToRole="siixsem_voltageb_t" />
+        </EntityType>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_colorb_t">
+          <End Type="siixsem_main_dbModel.siixsem_colorb_t" Role="siixsem_colorb_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_led2_td" Role="siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_colorb_t">
+              <PropertyRef Name="se_id_cb" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_colorb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_lblTagColor_t">
+          <End Type="siixsem_main_dbModel.siixsem_lblTagColor_t" Role="siixsem_lblTagColor_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_led2_td" Role="siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_lblTagColor_t">
+              <PropertyRef Name="se_id_lblTag" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_lblTag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_colorsb_led2_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_colorsb_led2_td" Role="siixsem_colorsb_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_colorsb_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_led2_td_siixsem_flxb_t">
+          <End Type="siixsem_main_dbModel.siixsem_flxb_t" Role="siixsem_flxb_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_flxsModel_led2_td" Role="siixsem_flxsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_flxb_t">
+              <PropertyRef Name="se_id_fb" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_led2_td">
+              <PropertyRef Name="se_id_flx" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_flxsModel_led2_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_flxsModel_led2_td" Role="siixsem_flxsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_flxsModel_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_led2_td_siixsem_models_t">
+          <End Type="siixsem_main_dbModel.siixsem_models_t" Role="siixsem_models_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_VoltsModel_led2_td" Role="siixsem_VoltsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_models_t">
+              <PropertyRef Name="se_id_model" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_led2_td">
+              <PropertyRef Name="se_id_model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siixsem_VoltsModel_led2_td_siixsem_voltageb_t">
+          <End Type="siixsem_main_dbModel.siixsem_voltageb_t" Role="siixsem_voltageb_t" Multiplicity="1" />
+          <End Type="siixsem_main_dbModel.siixsem_VoltsModel_led2_td" Role="siixsem_VoltsModel_led2_td" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="siixsem_voltageb_t">
+              <PropertyRef Name="se_id_volt" />
+            </Principal>
+            <Dependent Role="siixsem_VoltsModel_led2_td">
+              <PropertyRef Name="se_id_volt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="insertModel_Result">
+          <Property Type="Decimal" Name="RESULT" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="insertSideModel_Result">
+          <Property Type="Decimal" Name="RESULT" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="insertFluxModel_Result">
+          <Property Type="Decimal" Name="RESULT" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="getStep_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="isWabcoModel_Result">
+          <Property Type="Int32" Name="RESULT" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getLaserMarks_Result">
+          <Property Type="Int32" Name="se_id" Nullable="false" />
+          <Property Type="String" Name="se_description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="se_ip" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getNameCogiscan_Result">
+          <Property Type="String" Name="DESCRIPTION" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="COGISCANNAME" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="siixsem_main_dbModelStoreContainer" CdmEntityContainer="siixsem_main_dbEntities">
+          <EntitySetMapping Name="siixsem_families_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_families_t">
+              <MappingFragment StoreEntitySet="siixsem_families_t">
+                <ScalarProperty Name="se_id_family" ColumnName="se_id_family" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_car_model" ColumnName="se_car_model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_flxb_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_flxb_t">
+              <MappingFragment StoreEntitySet="siixsem_flxb_t">
+                <ScalarProperty Name="se_id_fb" ColumnName="se_id_fb" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_flx_lbl" ColumnName="se_flx_lbl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_flxsModel_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_flxsModel_td">
+              <MappingFragment StoreEntitySet="siixsem_flxsModel_td">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_flx" ColumnName="se_id_flx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_models_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_models_t">
+              <MappingFragment StoreEntitySet="siixsem_models_t">
+                <ScalarProperty Name="se_is_pallet" ColumnName="se_is_pallet" />
+                <ScalarProperty Name="se_xml" ColumnName="se_xml" />
+                <ScalarProperty Name="se_three_step" ColumnName="se_three_step" />
+                <ScalarProperty Name="se_two_step" ColumnName="se_two_step" />
+                <ScalarProperty Name="se_one_step" ColumnName="se_one_step" />
+                <ScalarProperty Name="se_is_ldm" ColumnName="se_is_ldm" />
+                <ScalarProperty Name="se_has_panelLbl" ColumnName="se_has_panelLbl" />
+                <ScalarProperty Name="se_laser_mark" ColumnName="se_laser_mark" />
+                <ScalarProperty Name="se_num_pcb" ColumnName="se_num_pcb" />
+                <ScalarProperty Name="se_cover_frame" ColumnName="se_cover_frame" />
+                <ScalarProperty Name="se_four_sides" ColumnName="se_four_sides" />
+                <ScalarProperty Name="se_dfc_ifc" ColumnName="se_dfc_ifc" />
+                <ScalarProperty Name="se_two_led" ColumnName="se_two_led" />
+                <ScalarProperty Name="se_serial_continuos" ColumnName="se_serial_continuos" />
+                <ScalarProperty Name="se_valid" ColumnName="se_valid" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_id_family" ColumnName="se_id_family" />
+                <ScalarProperty Name="se_is_special" ColumnName="se_is_special" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_sides_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_sides_t">
+              <MappingFragment StoreEntitySet="siixsem_sides_t">
+                <ScalarProperty Name="se_id_side" ColumnName="se_id_side" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_sidesModel_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_sidesModel_td">
+              <MappingFragment StoreEntitySet="siixsem_sidesModel_td">
+                <ScalarProperty Name="se_assembly_name" ColumnName="se_assembly_name" />
+                <ScalarProperty Name="se_oracle_par_num" ColumnName="se_oracle_par_num" />
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_side" ColumnName="se_id_side" />
+                <ScalarProperty Name="se_part_num_tr" ColumnName="se_part_num_tr" />
+                <ScalarProperty Name="se_int_part_num" ColumnName="se_int_part_num" />
+                <ScalarProperty Name="se_cust_part_num" ColumnName="se_cust_part_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_user_role_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_user_role_t">
+              <MappingFragment StoreEntitySet="siixsem_user_role_t">
+                <ScalarProperty Name="se_id_rol" ColumnName="se_id_rol" />
+                <ScalarProperty Name="se_code" ColumnName="se_code" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_descr_permissions" ColumnName="se_descr_permissions" />
+                <ScalarProperty Name="se_level" ColumnName="se_level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_users_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_users_t">
+              <MappingFragment StoreEntitySet="siixsem_users_t">
+                <ScalarProperty Name="se_id_user" ColumnName="se_id_user" />
+                <ScalarProperty Name="se_name" ColumnName="se_name" />
+                <ScalarProperty Name="se_pass" ColumnName="se_pass" />
+                <ScalarProperty Name="se_id_rol" ColumnName="se_id_rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_voltageb_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_voltageb_t">
+              <MappingFragment StoreEntitySet="siixsem_voltageb_t">
+                <ScalarProperty Name="se_id_volt" ColumnName="se_id_volt" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_volt_lbl" ColumnName="se_volt_lbl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_VoltsModel_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_VoltsModel_td">
+              <MappingFragment StoreEntitySet="siixsem_VoltsModel_td">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_volt" ColumnName="se_id_volt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="existModel" FunctionName="siixsem_main_dbModel.Store.existModel" />
+          <FunctionImportMapping FunctionImportName="getAllModels" FunctionName="siixsem_main_dbModel.Store.getAllModels">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getAllModels_Result">
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_id_family" ColumnName="se_id_family" />
+                <ScalarProperty Name="num_sides" ColumnName="num_sides" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getFluxesByIdModel" FunctionName="siixsem_main_dbModel.Store.getFluxesByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getFluxesByIdModel_Result">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_flx" ColumnName="se_id_flx" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_flx_lbl" ColumnName="se_flx_lbl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getNumSidesByIdModel" FunctionName="siixsem_main_dbModel.Store.getNumSidesByIdModel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getNumSidesByIdModel_Result">
+                <ScalarProperty Name="numSides" ColumnName="numSides" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSidesByIdModel" FunctionName="siixsem_main_dbModel.Store.getSidesByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getSidesByIdModel_Result">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_side" ColumnName="se_id_side" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getVoltsByIdModel" FunctionName="siixsem_main_dbModel.Store.getVoltsByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getVoltsByIdModel_Result">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_volt" ColumnName="se_id_volt" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_volt_lbl" ColumnName="se_volt_lbl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="validate_user" FunctionName="siixsem_main_dbModel.Store.validate_user">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.validate_user_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="desc_permissions" ColumnName="desc_permissions" />
+                <ScalarProperty Name="se_id_user" ColumnName="se_id_user" />
+                <ScalarProperty Name="se_name" ColumnName="se_name" />
+                <ScalarProperty Name="se_level" ColumnName="se_level" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updatePartNumber" FunctionName="siixsem_main_dbModel.Store.updatePartNumber" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.updatePartNumber_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="siixsem_colorsb_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_colorsb_td">
+              <MappingFragment StoreEntitySet="siixsem_colorsb_td">
+                <ScalarProperty Name="se_id_lblTag" ColumnName="se_id_lblTag" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_colorb" ColumnName="se_id_colorb" />
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_lblTagColor_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_lblTagColor_t">
+              <MappingFragment StoreEntitySet="siixsem_lblTagColor_t">
+                <ScalarProperty Name="se_lblTag" ColumnName="se_lblTag" />
+                <ScalarProperty Name="se_id_lblTag" ColumnName="se_id_lblTag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_colorb_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_colorb_t">
+              <MappingFragment StoreEntitySet="siixsem_colorb_t">
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_id_cb" ColumnName="se_id_cb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getColorsByIdModel" FunctionName="siixsem_main_dbModel.Store.getColorsByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getColorsByIdModel_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+                <ScalarProperty Name="se_id_colorb" ColumnName="se_id_colorb" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_lblTag" ColumnName="se_lblTag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="isSerialContinuos" FunctionName="siixsem_main_dbModel.Store.isSerialContinuos" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.isSerialContinuos_Result">
+                <ScalarProperty Name="isContinuos" ColumnName="isContinuos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getFluxLabelByID" FunctionName="siixsem_main_dbModel.Store.getFluxLabelByID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getFluxLabelByID_Result">
+                <ScalarProperty Name="se_flx_lbl" ColumnName="se_flx_lbl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getFluxDescByID" FunctionName="siixsem_main_dbModel.Store.getFluxDescByID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getFluxDescByID_Result">
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getColorDescById" FunctionName="siixsem_main_dbModel.Store.getColorDescById" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getColorDescById_Result">
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getVoltDescById" FunctionName="siixsem_main_dbModel.Store.getVoltDescById" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getVoltDescById_Result">
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="siixsem_ldmModels_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_ldmModels_td">
+              <MappingFragment StoreEntitySet="siixsem_ldmModels_td">
+                <ScalarProperty Name="se_id_model_ldm" ColumnName="se_id_model_ldm" />
+                <ScalarProperty Name="se_id_model_led" ColumnName="se_id_model_led" />
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getPrinters" FunctionName="siixsem_main_dbModel.Store.getPrinters" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getPrinters_Result">
+                <ScalarProperty Name="se_id_printer" ColumnName="se_id_printer" />
+                <ScalarProperty Name="se_code" ColumnName="se_code" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_ip" ColumnName="se_ip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hasLDM" FunctionName="siixsem_main_dbModel.Store.hasLDM" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.hasLDM_Result">
+                <ScalarProperty Name="id_ldm" ColumnName="id_ldm" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getPrintrById" FunctionName="siixsem_main_dbModel.Store.getPrintrById" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getPrintrById_Result">
+                <ScalarProperty Name="se_id_printer" ColumnName="se_id_printer" />
+                <ScalarProperty Name="se_code" ColumnName="se_code" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_ip" ColumnName="se_ip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="siixsem_printers_t">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_printers_t">
+              <MappingFragment StoreEntitySet="siixsem_printers_t">
+                <ScalarProperty Name="se_is_printing" ColumnName="se_is_printing" />
+                <ScalarProperty Name="se_ip" ColumnName="se_ip" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_code" ColumnName="se_code" />
+                <ScalarProperty Name="se_id_printer" ColumnName="se_id_printer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="isPrinting" FunctionName="siixsem_main_dbModel.Store.isPrinting" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.isPrinting_Result">
+                <ScalarProperty Name="se_is_printing" ColumnName="se_is_printing" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="setIsPrinting" FunctionName="siixsem_main_dbModel.Store.setIsPrinting" />
+          <EntitySetMapping Name="siixsem_modFourLbls_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_modFourLbls_td">
+              <MappingFragment StoreEntitySet="siixsem_modFourLbls_td">
+                <ScalarProperty Name="se_id_model_b" ColumnName="se_id_model_b" />
+                <ScalarProperty Name="se_id_model_a" ColumnName="se_id_model_a" />
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getLDMSpec" FunctionName="siixsem_main_dbModel.Store.getLDMSpec">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getLDMSpec_Result">
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="idSide" ColumnName="idSide" />
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="idFlx" ColumnName="idFlx" />
+                <ScalarProperty Name="idCol" ColumnName="idCol" />
+                <ScalarProperty Name="idVol" ColumnName="idVol" />
+                <ScalarProperty Name="idRev" ColumnName="idRev" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hasFourLbls" FunctionName="siixsem_main_dbModel.Store.hasFourLbls" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.hasFourLbls_Result">
+                <ScalarProperty Name="id_mB" ColumnName="id_mB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelSpecF" FunctionName="siixsem_main_dbModel.Store.getModelSpecF">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelSpecF_Result">
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="idSide" ColumnName="idSide" />
+                <ScalarProperty Name="idRev" ColumnName="idRev" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelColor" FunctionName="siixsem_main_dbModel.Store.getModelColor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelColor_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+                <ScalarProperty Name="se_id_colorb" ColumnName="se_id_colorb" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_lblTag" ColumnName="se_id_lblTag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelColorB" FunctionName="siixsem_main_dbModel.Store.getModelColorB" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelColorB_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getColorsLed2ByIdModel" FunctionName="siixsem_main_dbModel.Store.getColorsLed2ByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getColorsLed2ByIdModel_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+                <ScalarProperty Name="se_id_colorb" ColumnName="se_id_colorb" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getFluxesLed2ByIdModel" FunctionName="siixsem_main_dbModel.Store.getFluxesLed2ByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getFluxesLed2ByIdModel_Result">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_flx" ColumnName="se_id_flx" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getVoltsLed2ByIdModel" FunctionName="siixsem_main_dbModel.Store.getVoltsLed2ByIdModel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getVoltsLed2ByIdModel_Result">
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+                <ScalarProperty Name="se_id_volt" ColumnName="se_id_volt" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hasCoverFrame" FunctionName="siixsem_main_dbModel.Store.hasCoverFrame" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.hasCoverFrame_Result">
+                <ScalarProperty Name="se_cover_frame" ColumnName="se_cover_frame" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hasFourSides" FunctionName="siixsem_main_dbModel.Store.hasFourSides" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.hasFourSides_Result">
+                <ScalarProperty Name="se_four_sides" ColumnName="se_four_sides" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="isDFCIFC" FunctionName="siixsem_main_dbModel.Store.isDFCIFC" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.isDFCIFC_Result">
+                <ScalarProperty Name="se_dfc_ifc" ColumnName="se_dfc_ifc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelPanel" FunctionName="siixsem_main_dbModel.Store.getModelPanel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelPanel_Result">
+                <ScalarProperty Name="se_num_pcb" ColumnName="se_num_pcb" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getPrinterById" FunctionName="siixsem_main_dbModel.Store.getPrinterById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getPrinterById_Result">
+                <ScalarProperty Name="se_id_printer" ColumnName="se_id_printer" />
+                <ScalarProperty Name="se_code" ColumnName="se_code" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_ip" ColumnName="se_ip" />
+                <ScalarProperty Name="se_is_printing" ColumnName="se_is_printing" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelPanelSpec" FunctionName="siixsem_main_dbModel.Store.getModelPanelSpec">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelPanelSpec_Result">
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="idSide" ColumnName="idSide" />
+                <ScalarProperty Name="idRev" ColumnName="idRev" />
+                <ScalarProperty Name="numPCB" ColumnName="numPCB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hasPanel" FunctionName="siixsem_main_dbModel.Store.hasPanel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.hasPanel_Result">
+                <ScalarProperty Name="id_mB" ColumnName="id_mB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelColorP" FunctionName="siixsem_main_dbModel.Store.getModelColorP" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelColorP_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getModelByID" FunctionName="siixsem_main_dbModel.Store.getModelByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getModelByID_Result">
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_id_family" ColumnName="se_id_family" />
+                <ScalarProperty Name="se_is_special" ColumnName="se_is_special" />
+                <ScalarProperty Name="se_valid" ColumnName="se_valid" />
+                <ScalarProperty Name="se_serial_continuos" ColumnName="se_serial_continuos" />
+                <ScalarProperty Name="se_two_led" ColumnName="se_two_led" />
+                <ScalarProperty Name="se_dfc_ifc" ColumnName="se_dfc_ifc" />
+                <ScalarProperty Name="se_four_sides" ColumnName="se_four_sides" />
+                <ScalarProperty Name="se_cover_frame" ColumnName="se_cover_frame" />
+                <ScalarProperty Name="se_num_pcb" ColumnName="se_num_pcb" />
+                <ScalarProperty Name="se_laser_mark" ColumnName="se_laser_mark" />
+                <ScalarProperty Name="se_has_panelLbl" ColumnName="se_has_panelLbl" />
+                <ScalarProperty Name="se_is_ldm" ColumnName="se_is_ldm" />
+                <ScalarProperty Name="se_one_step" ColumnName="se_one_step" />
+                <ScalarProperty Name="se_two_step" ColumnName="se_two_step" />
+                <ScalarProperty Name="se_three_step" ColumnName="se_three_step" />
+                <ScalarProperty Name="se_xml" ColumnName="se_xml" />
+                <ScalarProperty Name="se_is_pallet" ColumnName="se_is_pallet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="siixsem_colorsb_led2_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_colorsb_led2_td">
+              <MappingFragment StoreEntitySet="siixsem_colorsb_led2_td">
+                <ScalarProperty Name="se_id_lblTag" ColumnName="se_id_lblTag" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_colorb" ColumnName="se_id_colorb" />
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_flxsModel_led2_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_flxsModel_led2_td">
+              <MappingFragment StoreEntitySet="siixsem_flxsModel_led2_td">
+                <ScalarProperty Name="se_id_flx" ColumnName="se_id_flx" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siixsem_VoltsModel_led2_td">
+            <EntityTypeMapping TypeName="siixsem_main_dbModel.siixsem_VoltsModel_led2_td">
+              <MappingFragment StoreEntitySet="siixsem_VoltsModel_led2_td">
+                <ScalarProperty Name="se_id_volt" ColumnName="se_id_volt" />
+                <ScalarProperty Name="se_id_model" ColumnName="se_id_model" />
+                <ScalarProperty Name="se_id_detail" ColumnName="se_id_detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="insertModel" FunctionName="siixsem_main_dbModel.Store.insertModel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.insertModel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="insertSideModel" FunctionName="siixsem_main_dbModel.Store.insertSideModel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.insertSideModel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="insertFluxModel" FunctionName="siixsem_main_dbModel.Store.insertFluxModel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.insertFluxModel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getStep" FunctionName="siixsem_main_dbModel.Store.getStep" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getStep_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="isWabcoModel" FunctionName="siixsem_main_dbModel.Store.isWabcoModel" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.isWabcoModel_Result">
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getLaserMarks" FunctionName="siixsem_main_dbModel.Store.getLaserMarks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getLaserMarks_Result">
+                <ScalarProperty Name="se_id" ColumnName="se_id" />
+                <ScalarProperty Name="se_description" ColumnName="se_description" />
+                <ScalarProperty Name="se_ip" ColumnName="se_ip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getNameCogiscan" FunctionName="siixsem_main_dbModel.Store.getNameCogiscan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_main_dbModel.getNameCogiscan_Result">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COGISCANNAME" ColumnName="COGISCANNAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

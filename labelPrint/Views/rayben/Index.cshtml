@@ -1,0 +1,245 @@
+﻿
+@{
+    string _lvl = "";
+    String _cd = "";
+    int _idU = 0;
+    if (Request.IsAuthenticated)
+    {
+        try
+        {
+            _lvl = Request.Cookies["_lvl"].Value;
+            _idU = Convert.ToInt32(Request.Cookies["_idU"].Value);
+            _cd = Request.Cookies["_idU"].Value;
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+}
+
+
+@if (Request.IsAuthenticated)
+{
+    <div class="window" style="margin-top:70px;">
+        <div class="window-title">ESPECIFICACIÓN DE ETIQUETA Y CÓDIGO 2D / LABELING SPECIFICATION AND 2D CODE <div id="txtDJ"></div></div>
+        <div class="window-content" style="">
+            <article>
+                <div class="row well">
+                    <div class="column">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="selModel">MODELO / MODEL</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control col-sm-2" name="selModel" id="selModel"></select>
+                                </div>
+                            </div>
+                            <fieldset @*class="drop-shadow"*@>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="selSideL">LADO / SIDE</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control col-sm-2" name="selSideL" id="selSideL"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="selFlxL">FLUX BIN</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control col-sm-2" name="selFlxL" id="selFlxL"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="selCBL">COLOR BIN</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control col-sm-2" name="selCBL" id="selCBL"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="selVBL">VOLTAGE BIN</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control col-sm-2" name="selVBL" id="selVBL"></select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <input id="txtLblCodeL" type="hidden" value="658528KEZ8GB8241XXXXX" />
+                        <input id="txtLblCodeL1" type="hidden" value="658528KEZ8GB8241XXXXX" />
+                        <input id="txtLblCodeL2" type="hidden" value="658528KEZ8GB8241XXXXX" />
+                        <input id="txtLblCodeR" type="hidden" value="648528KEZ8GB8241XXXXX" />
+                        <input id="txtLblCodeR1" type="hidden" value="648528KEZ8GB8241XXXXX" />
+                        <input id="txtLblCodeR2" type="hidden" value="648528KEZ8GB8241XXXXX" />
+                        <input id="txtDjNo" type="hidden" value="111111" />
+                        <input id="txtAName" type="hidden" value="111111" />
+                        <input id="txtDateDJ" type="hidden" value="111111" />
+                        <input id="isRem" type="hidden" value="0" />
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="column">
+                        <div id="rSide" style="margin-top:45px;">
+                            <form class="form-horizontal" role="form">
+                                <fieldset @*class="drop-shadow"*@>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="selSideR">LADO / SIDE</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control col-sm-2" name="selSideR" id="selSideR"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="selFlxR">FLUX BIN</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control col-sm-2" name="selFlxR" id="selFlxR"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="selCBR">COLOR BIN</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control col-sm-2" name="selCBR" id="selCBR"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="selVBR">VOLTAGE BIN</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control col-sm-2" name="selVBR" id="selVBR"></select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="column" style="border-radius:5px;margin-top:45px;">
+                        <div class="well well-sm text-center" style="padding-top: 25px;padding-bottom: 25px;">
+                            <div class="column45">
+                                <div class="lblBoxPrev">
+                                    <div class="width"></div>
+                                    <div class="height"></div>
+                                    <div id="lblFrameL" style="padding: 1px;">
+                                        <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column45">
+                                <div class="width"></div>
+                                <div class="height2"></div>
+                                <div class="lblBoxPrev">
+                                    <div id="lblFrameR" style="padding: 1px;">
+                                        <div style="padding: 15px;margin-left:auto;margin-right:auto;" id="wait"><img src="images/busy.gif" style="width: 10px;margin:10px;" /></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+
+                <div style="clear:both;"></div>
+
+                <div id="revs" class="well well-sm text-center" style="width:25%;font-family:'pt_sansr';">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="selRev">Revisón</label>
+                        <div class="col-sm-9">
+                            <select class="form-control col-sm-2" name="selRev" id="selRev"></select>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div>
+                    <label control-label">Cantidad de etiquetas:</label>
+                </div>
+                <div class="well well-sm text-center">
+
+                    <div class="column45">
+                        <div class="dlk-radio btn-group">
+                            <label class="btn btn-sm btn-default">
+                                <input name="choices[1]" class="form-control" type="radio" value="1" checked="checked">
+                                <i class="fa fa-check glyphicon glyphicon-ok"></i>1 - 3000
+                            </label>
+                            <label class="btn btn-sm btn-default">
+                                <input name="choices[1]" class="form-control" type="radio" value="2">
+                                <i class="fa fa-check glyphicon glyphicon-ok"></i>3000 - 6000
+                            </label>
+                            <label class="btn btn-sm btn-default">
+                                <input name="choices[1]" class="form-control" type="radio" value="3">
+                                <i class="fa fa-check glyphicon glyphicon-ok"></i>6000 - 9000
+                            </label>
+                            <label class="btn btn-sm btn-default">
+                                <input name="choices[1]" class="form-control" type="radio" value="4">
+                                <i class="fa fa-check glyphicon glyphicon-ok"></i>9000 - 12000
+                            </label>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="column45" style="margin-left:auto;margin-right:auto;">
+                        <select class="form-control col-sm-2" name="selCant" id="selCant"></select>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div style="clear:both;"></div>
+            </article>
+            <div style="float:right;">
+                @*<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnImpNumP">
+                        Importar Numeros de parte
+                    </button>*@
+                @if (_lvl == "2")
+                {
+                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnSaveEsp">
+                        Guardar Especificación
+                    </button>
+                }
+                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnImpEt">
+                    Imprimir etiquetas
+                </button>
+                @*<input type="button" value="Generar Etiqueta" class="btn btn-sm btn-success" id="btnGenEt" />*@
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#btnGenEt").click(function () {
+        });
+
+        $(document).ready(function () {
+            //loadLoginDlg();
+            getModelsToPrint();
+            //getReviews();
+
+            $("#formCant").validationEngine('attach');
+            $("#btnImpEt").click(function () {
+                if (!jQuery("#formCant").validationEngine('validate')) {
+                    return false;
+                }
+                getViewPrintLbl($("#selModel").val(), $("#selSideL").val(), $("#selSideR").val(), $("#selFlxL").val(), $("#selVBL").val(), $("#selCBL").val(), $("#selRev").val(), $("#selCant").val());
+            });
+            $("#btnImpNumP").click(function () {
+                getDlgUpdatePN();
+            });
+            $("#btnSaveEsp").click(function () {
+                if (!jQuery("#formCant").validationEngine('validate')) {
+                    return false;
+                }
+            });
+
+        });
+    </script>
+}
+else
+{
+    <div class="alert alert-warning warningBar" role="alert" style="margin-top:90px;margin-left:auto;margin-right:auto;width:45%;">
+        Debes iniciar sesión para usar el sistema...
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnLogin" style="margin-left:30px;">
+            Iniciar sesion...
+        </button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnLogin").click(function () {
+                getDlgLogin();
+            });
+        });
+    </script>
+
+}
+
+

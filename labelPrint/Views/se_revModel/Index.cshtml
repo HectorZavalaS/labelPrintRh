@@ -1,0 +1,106 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_revModel_td>
+@*@if (Request.IsAuthenticated)
+{*@
+    <script type="text/javascript">
+        function get_model(id) {
+            getModelDesc(id);
+        }
+
+        //block();
+        blockV2("Cargando modelos...");
+    </script>
+    <div id="tableModels">
+        <div class="window" style="margin-top:70px;width:70%;">
+            <div class="window-title">ETIQUETAS / LABELS</div>
+            <div class="window-content">
+                <div class="well" style="font-size:14px;font-family:pt_sansr;background-color:white;">
+                    <table class="table cell-border" id="tblReviews" style="width:70%;margin-left:auto;margin-right:auto;">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Modelo
+                                </th>
+                                <th>
+                                    Revisión
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td>
+                                        <div id="modelDesc_@item.se_id_model" style="color:royalblue;font-weight:bold;"></div>
+                                        <script type="text/javascript">
+                                        getModelDesc(@item.se_id_model);
+                                        </script>
+                                    </td>
+                                    <td>
+                                        <center><div style="color:red;font-weight:bold;">@Html.DisplayFor(modelItem => item.siixsem_reviews_t.se_description)</div></center>
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.se_id })
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnNewAsignRev" style="margin-left:30px;float:right;">
+                    <span class='glyphicon glyphicon-file' style='margin-right:5px;'></span>Nuevo
+                </button>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //loadLoginDlg();
+                $('#tblReviews').DataTable({
+                    "paging": true,
+                    //"order": [[0, "asc"]],
+                    "recordsFiltered": 10,
+                    "lengthChange": false,
+                    "searching": true,
+                    "pageLength": 5,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": true,
+                    'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+                });
+                removeOverlay();
+                $("#tblReviews").show("explode");
+                $("#btnNewAsignRev").click(function () {
+                    getDlgCreateAsignRev();
+                    //location.reload(true);
+                });
+                $(".edit").html("<span class='glyphicon glyphicon-pencil' style='margin:0;'></span>");
+                $(".delete").html("<span class='glyphicon glyphicon-trash' style='margin:0;'></span>");
+                $(".det").html("<span class='glyphicon glyphicon-list-alt' style='margin:0;'></span>");
+            });
+        </script>
+    }
+@*}
+else
+{
+    <div class="alert alert-warning warningBar" role="alert" style="margin-top:90px;margin-left:auto;margin-right:auto;width:45%;">
+        Debes iniciar sesión para usar el sistema...
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnLogin" style="margin-left:30px;">
+            Iniciar sesion...
+        </button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnLogin").click(function () {
+                getDlgLogin();
+            });
+        });
+    </script>
+
+}*@

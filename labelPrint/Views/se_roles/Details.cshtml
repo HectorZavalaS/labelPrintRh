@@ -1,0 +1,50 @@
+﻿@model labelPrint.Models.siixsem_user_role_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_user_role_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_descr_permissions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_descr_permissions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_level)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_rol }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

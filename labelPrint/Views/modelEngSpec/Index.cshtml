@@ -1,0 +1,248 @@
+﻿
+@{
+    string _lvl = "";
+    String _cd = "";
+    int _idU = 0;
+    if (Request.IsAuthenticated)
+    {
+        try
+        {
+            _lvl = Request.Cookies["_lvl"].Value;
+            _idU = Convert.ToInt32(Request.Cookies["_idU"].Value);
+            _cd = Request.Cookies["_idU"].Value;
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+}
+
+
+@if (Request.IsAuthenticated)
+{
+    <div class="window" style="margin-top:70px;">
+        <div class="window-title">ESPECIFICACIÓN DE MODELO / MODEL SPECIFICATION</div>
+        <div class="window-content" style="">
+            <article>
+                <div class="window" style="width:500px;margin-bottom:30px;">
+                    <div class="window-content" style="background-image:none;background-color:white;color:black;">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="selModel">MODELO</label>
+                            <div class="col-sm-8">
+                                <select class="form-control col-sm-2" name="selModel" id="selModel"></select>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div class="titleBox window" style="margin-left:30px;">
+                    <div class="window-content" style="padding:0px;background-image:none;background-color:white;"><label style="margin-bottom:0px;">Bin configuration</label></div>
+                </div>
+                <div class="well row" style="color:black; margin-left:auto;margin-right:auto;">
+                    <div style="margin-left:auto;margin-right:auto;width:100%;">
+                        <div class="column" style="width:33%;">
+                            <div class="window-content" style="background-image:none;background-color:white;color:black;">
+                                <table id="tblFlxModel" class="table cenTbl" style="width:90%;">
+                                    <thead>
+                                        <tr>
+                                            <th>FLUX</th>
+                                            <th>LABEL</th>
+                                            <th style="width: 10px"></th>
+                                            <th style="width: 10px">
+                                                <button class='btn btn-sm btn-success' id="btnAddFlx" data-toggle="modal" data-target="#dlgGeneral">
+                                                    <span class='glyphicon glyphicon-plus' style='margin:0;'></span>
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="column" style="width:33%;">
+                            <div class="window-content" style="background-image:none;background-color:white;color:black;">
+                                <table id="tblColorModel" class="table cenTbl" style="width:90%;">
+                                    <thead>
+                                        <tr>
+                                            <th>COLOR</th>
+                                            <th>LABEL</th>
+                                            <th style="width: 10px"></th>
+                                            <th style="width: 10px">
+                                                <button class='btn btn-sm btn-success' data-toggle="modal" data-target="#dlgGeneral" id="btnAddCol">
+                                                    <span class='glyphicon glyphicon-plus' style='margin:0;'></span>
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="column" style="width:33%;">
+                            <div class="window-content" style="background-image:none;background-color:white;color:black;">
+                                <table id="tblVoltModel" class="table cenTbl" style="width:90%;">
+                                    <thead>
+                                        <tr>
+                                            <th>VOLTAGE</th>
+                                            <th>LABEL</th>
+                                            <th style="width: 10px"></th>
+                                            <th style="width: 10px">
+                                                <button class='btn btn-sm btn-success' data-toggle="modal" data-target="#dlgGeneral" id="btnAddVolt">
+                                                    <span class='glyphicon glyphicon-plus' style='margin:0;'></span>
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="titleBox window" style="width:120px;">
+                    <div class="window-content" style="padding:0px;background-image:none;background-color:white;"><label style="margin-bottom:0px;">Review</label></div>
+                </div>
+                <div id="revs" class="row well" style="width:150px;font-family:'pt_sansr';margin-bottom: 20px;padding:19px;">
+                    <div class="form-group">
+                        <div class="col-sm-8">
+                            <select class="form-control col-sm-2" name="selRev" id="selRev"></select>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </article>
+            <div style="float:right;">
+                @*<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnImpNumP">
+                        Importar Numeros de parte
+                    </button>*@
+                @if (_lvl == "2")
+                {
+                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnSaveEsp">
+                        Guardar Especificación
+                    </button>
+                }
+                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnImpEt">
+                    Imprimir etiquetas
+                </button>
+                @*<input type="button" value="Generar Etiqueta" class="btn btn-sm btn-success" id="btnGenEt" />*@
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            $("#btnGenEt").click(function () {
+            });
+
+            $(document).ready(function () {
+                //loadLoginDlg();
+                getAllModelsToAdmin();
+                //getReviews();
+                $('#tblFlxModel').DataTable({
+                    "paging": false,
+                    //"order": [[0, "asc"]],
+                    "searching": false,
+                    "pageLength": 15,
+                    "ordering": false,
+                    "info": false,
+                    "autoWidth": false,
+                    //"columns": [
+                    //    { width: '10px' }
+                    //],
+                   // "fixedColumns": true,
+                    'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+                });
+                $('#tblColorModel').DataTable({
+                    "paging": false,
+                    //"order": [[0, "asc"]],
+                    "recordsFiltered": 10,
+                    "lengthChange": false,
+                    "searching": false,
+                    "pageLength": 15,
+                    "ordering": false,
+                    "info": false,
+                    "autoWidth": true,
+                    'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+                });
+                $('#tblVoltModel').DataTable({
+                    "paging": false,
+                    //"order": [[0, "asc"]],
+                    "recordsFiltered": 10,
+                    "lengthChange": false,
+                    "searching": false,
+                    "pageLength": 15,
+                    "ordering": false,
+                    "info": false,
+                    "autoWidth": true,
+                    'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+                });
+               // $("div.toolbar").html('<b>Custom tool bar! Text/images etc.</b>');
+                $("#formCant").validationEngine('attach');
+                $("#btnImpEt").click(function () {
+                    if (!jQuery("#formCant").validationEngine('validate')) {
+                        return false;
+                    }
+                    getViewPrintLbl($("#selModel").val(), $("#selSideL").val(), $("#selSideR").val(), $("#selFlxL").val(), $("#selVBL").val(), $("#selCBL").val(), $("#selRev").val(), $("#selCant").val());
+                });
+                $("#btnImpNumP").click(function () {
+                    getDlgUpdatePN();
+                });
+                
+                $("#btnAddFlx").click(function () {
+                    getDlgCreateFlux($("#selModel").val());
+                });
+                $("#btnAddCol").click(function () {
+                    getDlgCreateColor($("#selModel").val());
+                });
+                $("#btnSaveEsp").click(function () {
+                    if (!jQuery("#formCant").validationEngine('validate')) {
+                        return false;
+                    }
+                });
+
+            });
+        </script>
+    }
+}
+else
+{
+    <div class="alert alert-warning warningBar" role="alert" style="margin-top:90px;margin-left:auto;margin-right:auto;width:45%;">
+        Debes iniciar sesión para usar el sistema...
+        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#dlgGeneral" id="btnLogin" style="margin-left:30px;">
+            Iniciar sesion...
+        </button>
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#btnLogin").click(function () {
+                    getDlgLogin();
+                });
+            });
+        </script>
+    }
+
+}

@@ -1,0 +1,63 @@
+﻿@using labelPrint.Models
+@model LoginViewModel
+<div @*class="row"*@ style="width:80%;margin-left:auto;margin-right:auto;">
+    <section id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formLogin" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, "Usuario:", new { @class = "col-md-4 control-label" })
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control  validate[required]", id = "userName" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, "Password:", new { @class = "col-md-4 control-label" })
+                <div class="col-md-12">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control  validate[required]", id = "password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="float:right;">
+                @*<div class="col-md-offset-2 col-md-10">
+                    <button type='button' class='btn btn-sm btn-danger' data-dismiss='modal' id='btnClose'>
+                        <span class='glyphicon glyphicon-remove-circle' style='margin-right:7px;'></span>Cancelar
+                    </button>
+                </div>*@
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="button" class="btn btn-sm btn-success" id="btnLogin" onclick="log();">Iniciar sesión</button>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        }
+    </section>
+    <div id="sectionMessage">
+        <label id="message" class="FAIL"></label>
+        <input class="btn btn-lg btn-success btn-block" type="button" id="showFormLog" value="Aceptar" onclick="acept();">
+    </div>
+    <div id="sectionLoading">
+        @*<label id="message" class="FAIL"></label>
+            <input class="btn btn-lg btn-success btn-block" type="button" id="showFormLog" value="Aceptar">*@
+    </div>
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")*@
+<script type="text/javascript">
+        $("#sectionMessage").hide();
+        $("#sectionLoading").hide();
+        $("#formLogin").validationEngine('attach');
+
+</script>
+
+@*}*@

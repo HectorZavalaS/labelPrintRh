@@ -1,0 +1,57 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_sidesModel_td>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.se_part_num_tr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.se_int_part_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.se_cust_part_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siixsem_models_t.se_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siixsem_sides_t.se_description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.se_part_num_tr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.se_int_part_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.se_cust_part_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siixsem_models_t.se_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siixsem_sides_t.se_description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.se_id_detail }) |
+            @Html.ActionLink("Details", "Details", new { id=item.se_id_detail }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.se_id_detail })
+        </td>
+    </tr>
+}
+
+</table>

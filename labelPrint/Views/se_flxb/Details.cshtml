@@ -1,0 +1,26 @@
+﻿@model labelPrint.Models.siixsem_flxb_t
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            Label tag
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_flx_lbl)
+        </dd>
+
+    </dl>
+</div>
+<div style="float:right;">
+    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cerrar</button>
+</div>
+<div style="clear:both;"></div>

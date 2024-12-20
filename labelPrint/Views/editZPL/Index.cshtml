@@ -1,0 +1,57 @@
+﻿@model IEnumerable<labelPrint.Models.siixsem_lblZPL_t>
+
+<div class="window">
+    <div class="window-content" style="background-image:none;">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table" id="tblZPL">
+            <thead>
+                <tr>
+                    <th>DESCRIPCION</th>
+                    <th>UNO AL PASO</th>
+                    <th>DOS AL PASO</th>
+                    <th>PREVIEW</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.TextAreaFor(modelItem => item.se_name, new { @class = "form-control" })</td>
+                        <td>@Html.TextAreaFor(modelItem => item.se_str_zpl_one, new { @class = "form-control" })</td>
+                        <td>@Html.TextAreaFor(modelItem => item.se_str_zpl_two, new { @class = "form-control" })</td>
+                        <td>@Html.TextAreaFor(modelItem => item.se_str_zpl_preview, new { @class = "form-control" })</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.se_id_zpl }) 
+                            @*@Html.ActionLink("Details", "Details", new { id = item.se_id_zpl }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.se_id_zpl })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //loadLoginDlg();
+            $('#tblZPL').DataTable({
+                "paging": true,
+                //"order": [[0, "asc"]],
+                "recordsFiltered": 10,
+                "lengthChange": false,
+                "searching": true,
+                "pageLength": 5,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                'language': { 'url': getVirtDir() + '/Scripts/Spanish.json' }
+            });
+
+        });
+    </script>
+}

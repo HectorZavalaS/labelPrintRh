@@ -1,0 +1,58 @@
+﻿@model labelPrint.Models.siixsem_sidesModel_td
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_sidesModel_td</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_part_num_tr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_part_num_tr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_int_part_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_int_part_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_cust_part_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_cust_part_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_models_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_models_t.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_sides_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_sides_t.se_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_detail }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

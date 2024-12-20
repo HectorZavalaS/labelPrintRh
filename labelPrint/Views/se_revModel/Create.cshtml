@@ -1,0 +1,59 @@
+﻿@model labelPrint.Models.siixsem_revModel_td
+
+@using (Html.BeginForm("Create", "se_revModel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formCreateAsignRev" })) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label for="selModel" class = "control-label col-md-4">Model</label>
+        <div class="col-md-8">
+            <select id="selModel" class="form-control" data-live-search="true" data-size="10" data-live-search-style="contains" style="width:400px;" data-style="btn-primary"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="selRev" class="control-label col-md-4" >Review</label>
+        <div class="col-md-8">
+
+            <select id="selRev" class="form-control" data-live-search="true" data-size="10" data-live-search-style="contains" style="width:100px;" data-style="btn-info"></select>
+        </div>
+    </div>
+
+    <div style="float:right; width:180px;">
+        <div style="float:left;">
+
+            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                <span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cancelar
+            </button>
+        </div>
+        <div style="float:right;">
+            <button type="submit" class="btn btn-sm btn-success" id="btnSaveAsignRev">
+                <span class='glyphicon glyphicon-floppy-disk' style='margin-right:5px;'></span>Guardar
+            </button>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        getReviews();
+        getAllModels();
+        $("#selRev").css("width", "100px");
+        $("#formCreateAsignRev").validationEngine('attach');
+        $("#btnSaveAsignRev").click(function () {
+            if (!jQuery("#formCreateAsignRev").validationEngine('validate')) {
+                return false;
+            }
+            //getDlgCreateAsignLabel();
+            var r = AsignReview($("#selModel").val(), $("#selRev").val());
+            if (r === "false")
+                return false;
+            //getViewPrintLbl($("#txtLblCodeL").val(), $("#txtLblCodeR").val(), $("#selCant").val());
+        });
+        $("#selRev").selectpicker();
+    });
+</script>

@@ -1,0 +1,32 @@
+﻿@model labelPrint.Models.siixsem_reviews_t
+
+<div style="margin-left:auto;margin-right:auto;width:65%;"><strong>¿De verdad quieres borrar la revisión?</strong></div>
+<br />
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+    </dl>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="float:right;">
+            @*<input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")*@
+            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class='glyphicon glyphicon-remove-circle' style='margin-right:5px;'></span>Cancelar</button>
+            <button type="submit" class="btn btn-sm btn-success" id="btnSaveMod">
+                <span class='glyphicon glyphicon-floppy-disk' style='margin-right:5px;'></span>Borrar
+            </button>
+        </div>
+        <div style="clear:both;"></div>
+    }
+</div>

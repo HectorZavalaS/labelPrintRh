@@ -1,0 +1,42 @@
+﻿@model labelPrint.Models.siixsem_lblSizes_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_lblSizes_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.se_width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.se_width)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_size }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

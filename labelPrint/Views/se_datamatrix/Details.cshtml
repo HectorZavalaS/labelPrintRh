@@ -1,0 +1,34 @@
+﻿@model labelPrint.Models.siixsem_datamatrix_t
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siixsem_datamatrix_t</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_densities_t.se_id_density)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_densities_t.se_id_density)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siixsem_lblSizes_t.se_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siixsem_lblSizes_t.se_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.se_id_dm }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
